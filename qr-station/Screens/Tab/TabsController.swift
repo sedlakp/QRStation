@@ -1,0 +1,51 @@
+//
+//  TabsController.swift
+//  qr-station
+//
+//  Created by Petr Sedlák on 23.05.2022.
+//
+
+import UIKit
+
+class TabsController: UITabBarController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("Hello")
+        delegate = self
+        
+        let vc2 = makeQrListController()
+        let vc1 = makeDashboardController()
+        
+        self.viewControllers = [vc1,vc2]
+        
+        
+        // Do any additional setup after loading the view.
+    }
+
+    func makeQrListController() -> UINavigationController {
+        let vc = QRListViewController(nibName: "QRListViewController", bundle: nil)
+        vc.tabBarItem = UITabBarItem(title: "List", image: UIImage(systemName: "qrcode"), tag: 0)
+        let nc = UINavigationController(rootViewController: vc)
+        return nc
+    }
+    
+    func makeDashboardController() -> UINavigationController {
+        let vc = DashboardViewController(nibName: "DashboardViewController", bundle: nil)
+        vc.tabBarItem = UITabBarItem(title: "QR", image: UIImage(systemName: "list.dash"), tag: 1)
+        let nc = UINavigationController(rootViewController: vc)
+        return nc
+    }
+
+}
+
+
+extension TabsController: UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return true
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("Selected Controller: \(viewController.title)")
+    }
+}
