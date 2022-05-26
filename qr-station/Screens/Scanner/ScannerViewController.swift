@@ -13,7 +13,7 @@ class ScannerViewController: UIViewController {
     
     let qrManager = QRCodeManager.shared
     
-    @IBOutlet weak var qrScannerView: QRScannerView!
+    @IBOutlet weak var qrScannerView: QRScannerView! // TODO: The scanner indicator is not centered
 
     override func viewDidLoad() {
         super.viewDidLoad()
