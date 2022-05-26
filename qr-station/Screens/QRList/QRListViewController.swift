@@ -17,7 +17,7 @@ class QRListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "List"
-        navigationItem.title = "QR List"
+        navigationItem.title = "QR Codes"
         
         tableView.register(QRCell.nib, forCellReuseIdentifier: QRCell.reuseIdentifier)
         tableView.delegate = self
@@ -50,6 +50,19 @@ extension QRListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleText.textColor = .label
         cell.qrImage.image = qr.qr
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            // TODO: During filtering, be careful about what gets deleted
+            qrManager.delete(qrManager.qrCodes[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+        }
     }
     
     
