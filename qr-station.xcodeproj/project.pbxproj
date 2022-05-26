@@ -28,6 +28,7 @@
 		BB4A6EE2283F980200EB0106 /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */; };
 		BB4A6EE4283F982100EB0106 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE3283F982100EB0106 /* QRCode.swift */; };
 		BB4A6EE6283F9A9400EB0106 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */; };
+		BB4A6EE9283FBAA600EB0106 /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE8283FBAA600EB0106 /* UITextFieldEx.swift */; };
 		BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABA3FE283E653E0056221D /* CreateQRViewController.swift */; };
 		BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBABA3FF283E653E0056221D /* CreateQRViewController.xib */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
 		BB4A6EE3283F982100EB0106 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
+		BB4A6EE8283FBAA600EB0106 /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
 		BBABA3FE283E653E0056221D /* CreateQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRViewController.swift; sourceTree = "<group>"; };
 		BBABA3FF283E653E0056221D /* CreateQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateQRViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 				BB0F0FCF283B779D00B3AB12 /* VCExtension.swift */,
 				BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */,
 				BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */,
+				BB4A6EE8283FBAA600EB0106 /* UITextFieldEx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				BB0F0FC3283B6A0600B3AB12 /* TabsController.swift in Sources */,
 				BB0F0FC9283B719600B3AB12 /* QRListViewController.swift in Sources */,
+				BB4A6EE9283FBAA600EB0106 /* UITextFieldEx.swift in Sources */,
 				BB0F0FD0283B779D00B3AB12 /* VCExtension.swift in Sources */,
 				BB4A6EDC283F900900EB0106 /* ScannerViewController.swift in Sources */,
 				BB0F0FD3283B87C000B3AB12 /* QRCell.swift in Sources */,
@@ -423,6 +427,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to get images containing qr codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -453,6 +458,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to get images containing qr codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

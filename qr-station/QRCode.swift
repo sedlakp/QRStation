@@ -17,12 +17,12 @@ struct QRCode: Equatable {
         case created
     }
     
+    // Enum to know what kind of UI and content should be shown
     enum Content {
         case text
         case url
     }
     
-    //let id = UUID()
     let string: String
     let whereFrom: WhereFrom
     let appearedDate: Date
@@ -40,7 +40,7 @@ struct QRCode: Equatable {
     }
     
     // Create nicer qr code to show
-    lazy var qr: UIImage? = {
+    lazy private(set) var qr: UIImage? = {
         let cgImage = EFQRCode.generate(for: string)
         guard let cgImage = cgImage else { return nil }
         return UIImage(cgImage: cgImage)

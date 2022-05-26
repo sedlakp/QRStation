@@ -17,6 +17,7 @@ class QRListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "List"
+        navigationItem.title = "QR List"
         
         tableView.register(QRCell.nib, forCellReuseIdentifier: QRCell.reuseIdentifier)
         tableView.delegate = self

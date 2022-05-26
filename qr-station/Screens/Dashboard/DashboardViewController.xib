@@ -44,8 +44,8 @@
                                         <constraint firstAttribute="width" secondItem="UE6-Eb-3ZL" secondAttribute="height" multiplier="1:1" id="VJk-lW-50W"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
-                                        <imageReference key="image" image="qrcode.viewfinder" catalog="system" symbolScale="default"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="" cornerStyle="capsule">
+                                        <imageReference key="image" image="qrcode.viewfinder" catalog="system" symbolScale="large"/>
                                     </buttonConfiguration>
                                 </button>
                             </subviews>
@@ -67,7 +67,7 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
-                                        <imageReference key="image" image="qrcode.viewfinder" catalog="system" symbolScale="default"/>
+                                        <imageReference key="image" image="qrcode.viewfinder" catalog="system" symbolScale="large"/>
                                     </buttonConfiguration>
                                 </button>
                             </subviews>
@@ -88,7 +88,9 @@
                                         <constraint firstAttribute="width" constant="60" id="WaK-Tl-J9l"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="filled" image="plus.app" catalog="system" cornerStyle="capsule"/>
+                                    <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                        <imageReference key="image" image="plus.app" catalog="system" symbolScale="large"/>
+                                    </buttonConfiguration>
                                 </button>
                             </subviews>
                         </stackView>

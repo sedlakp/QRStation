@@ -13,9 +13,7 @@ class ScannerViewController: UIViewController {
     
     let qrManager = QRCodeManager.shared
     
-    lazy var qrScannerView: QRScannerView = {
-        return QRScannerView(frame: view.bounds)
-    }()
+    @IBOutlet weak var qrScannerView: QRScannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

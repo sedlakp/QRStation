@@ -37,6 +37,7 @@ class DashboardViewController: UIViewController {
         
         qrScanBtn.addTarget(self, action: #selector(scanBtnTapped), for: .touchUpInside)
         qrImageScanBtn.addTarget(self, action: #selector(importPicture), for: .touchUpInside)
+        qrCreateBtn.addTarget(self, action: #selector(createTapped), for: .touchUpInside)
         
     }
 
@@ -52,6 +53,12 @@ class DashboardViewController: UIViewController {
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
+    }
+    
+    @objc func createTapped() {
+        let vc = CreateQRViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
