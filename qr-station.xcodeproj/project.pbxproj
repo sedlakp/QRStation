@@ -420,6 +420,7 @@
 				INFOPLIST_FILE = "qr-station/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "QR Station";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used for scanning codes";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to get images containing qr codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -449,6 +450,7 @@
 				INFOPLIST_FILE = "qr-station/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "QR Station";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used for scanning codes";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to get images containing qr codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

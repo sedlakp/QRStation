@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="qrCreateBtn" destination="T3X-mY-Sdd" id="ngN-vD-9sj"/>
                 <outlet property="qrCreateLbl" destination="Klu-Kb-Ety" id="AFE-Mp-7mW"/>
+                <outlet property="qrImageScanBtn" destination="27o-WU-WkZ" id="a3p-wQ-2fh"/>
+                <outlet property="qrImageScanLbl" destination="ldr-QX-Cyd" id="tTv-zC-GW0"/>
                 <outlet property="qrScanBtn" destination="UE6-Eb-3ZL" id="dua-4h-JfZ"/>
                 <outlet property="qrScanLbl" destination="A9o-B7-GH9" id="JgC-aG-MDR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="mK7-JC-ESv"/>
@@ -24,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="yO5-iZ-mGD">
-                    <rect key="frame" x="16" y="329.5" width="382" height="237"/>
+                    <rect key="frame" x="16" y="255.5" width="382" height="385.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="otl-AI-o2G">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="88.5"/>
@@ -48,8 +50,30 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bkc-h5-aWL">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-i1-CM8">
                             <rect key="frame" x="0.0" y="148.5" width="382" height="88.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldr-QX-Cyd">
+                                    <rect key="frame" x="170.5" y="0.0" width="41.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27o-WU-WkZ">
+                                    <rect key="frame" x="161" y="28.5" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="27o-WU-WkZ" secondAttribute="height" multiplier="1:1" id="BLz-xx-dVM"/>
+                                        <constraint firstAttribute="width" constant="60" id="PWZ-oe-bBn"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                        <imageReference key="image" image="qrcode.viewfinder" catalog="system" symbolScale="default"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bkc-h5-aWL">
+                            <rect key="frame" x="0.0" y="297" width="382" height="88.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klu-Kb-Ety">
                                     <rect key="frame" x="170.5" y="0.0" width="41.5" height="20.5"/>

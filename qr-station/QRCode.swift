@@ -17,10 +17,27 @@ struct QRCode: Equatable {
         case created
     }
     
+    enum Content {
+        case text
+        case url
+    }
+    
     //let id = UUID()
     let string: String
     let whereFrom: WhereFrom
     let appearedDate: Date
+    
+    var url: URL? {
+        return URL(string: string)
+    }
+    
+    var content: Content {
+        if let _ = url {
+            return .url
+        } else {
+            return .text
+        }
+    }
     
     // Create nicer qr code to show
     lazy var qr: UIImage? = {
