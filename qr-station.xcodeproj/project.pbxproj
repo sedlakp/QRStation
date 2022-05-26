@@ -21,6 +21,12 @@
 		BB0F0FD3283B87C000B3AB12 /* QRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F0FD1283B87C000B3AB12 /* QRCell.swift */; };
 		BB0F0FD4283B87C000B3AB12 /* QRCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0F0FD2283B87C000B3AB12 /* QRCell.xib */; };
 		BB0F0FD6283B8A2600B3AB12 /* CellEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */; };
+		BB4A6ED9283F8F9700EB0106 /* QRScanner in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6ED8283F8F9700EB0106 /* QRScanner */; };
+		BB4A6EDC283F900900EB0106 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */; };
+		BB4A6EDD283F900900EB0106 /* ScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A6EDB283F900900EB0106 /* ScannerViewController.xib */; };
+		BB4A6EE0283F96BF00EB0106 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6EDF283F96BF00EB0106 /* EFQRCode */; };
+		BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABA3FE283E653E0056221D /* CreateQRViewController.swift */; };
+		BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBABA3FF283E653E0056221D /* CreateQRViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,10 @@
 		BB0F0FD1283B87C000B3AB12 /* QRCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCell.swift; sourceTree = "<group>"; };
 		BB0F0FD2283B87C000B3AB12 /* QRCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCell.xib; sourceTree = "<group>"; };
 		BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEx.swift; sourceTree = "<group>"; };
+		BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		BB4A6EDB283F900900EB0106 /* ScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerViewController.xib; sourceTree = "<group>"; };
+		BBABA3FE283E653E0056221D /* CreateQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRViewController.swift; sourceTree = "<group>"; };
+		BBABA3FF283E653E0056221D /* CreateQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateQRViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4A6ED9283F8F9700EB0106 /* QRScanner in Frameworks */,
+				BB4A6EE0283F96BF00EB0106 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +87,7 @@
 				BB0F0FAB283B64C100B3AB12 /* AppDelegate.swift */,
 				BB0F0FAD283B64C100B3AB12 /* SceneDelegate.swift */,
 				BB0F0FD7283B8A2C00B3AB12 /* Extensions */,
+				BB0F0FD8283B8B8900B3AB12 /* Cells */,
 				BB0F0FC0283B695B00B3AB12 /* Screens */,
 				BB0F0FB4283B64C300B3AB12 /* Assets.xcassets */,
 				BB0F0FB6283B64C300B3AB12 /* LaunchScreen.storyboard */,
@@ -95,6 +108,8 @@
 		BB0F0FC0283B695B00B3AB12 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BBABA402283E65470056221D /* CreateQR */,
+				BBABA3FB283E64C40056221D /* Scanner */,
 				BB0F0FC5283B6A1100B3AB12 /* Tab */,
 				BB0F0FC6283B716F00B3AB12 /* QRList */,
 				BB0F0FBF283B694C00B3AB12 /* Dashboard */,
@@ -116,8 +131,6 @@
 			children = (
 				BB0F0FC7283B719600B3AB12 /* QRListViewController.swift */,
 				BB0F0FC8283B719600B3AB12 /* QRListViewController.xib */,
-				BB0F0FD1283B87C000B3AB12 /* QRCell.swift */,
-				BB0F0FD2283B87C000B3AB12 /* QRCell.xib */,
 			);
 			path = QRList;
 			sourceTree = "<group>";
@@ -129,6 +142,33 @@
 				BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BB0F0FD8283B8B8900B3AB12 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BB0F0FD1283B87C000B3AB12 /* QRCell.swift */,
+				BB0F0FD2283B87C000B3AB12 /* QRCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BBABA3FB283E64C40056221D /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */,
+				BB4A6EDB283F900900EB0106 /* ScannerViewController.xib */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		BBABA402283E65470056221D /* CreateQR */ = {
+			isa = PBXGroup;
+			children = (
+				BBABA3FE283E653E0056221D /* CreateQRViewController.swift */,
+				BBABA3FF283E653E0056221D /* CreateQRViewController.xib */,
+			);
+			path = CreateQR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +187,10 @@
 			dependencies = (
 			);
 			name = "qr-station";
+			packageProductDependencies = (
+				BB4A6ED8283F8F9700EB0106 /* QRScanner */,
+				BB4A6EDF283F96BF00EB0106 /* EFQRCode */,
+			);
 			productName = "qr-station";
 			productReference = BB0F0FA8283B64C100B3AB12 /* qr-station.app */;
 			productType = "com.apple.product-type.application";
@@ -175,6 +219,10 @@
 				Base,
 			);
 			mainGroup = BB0F0F9F283B64C100B3AB12;
+			packageReferences = (
+				BB4A6ED7283F8F9700EB0106 /* XCRemoteSwiftPackageReference "QRScanner" */,
+				BB4A6EDE283F96BF00EB0106 /* XCRemoteSwiftPackageReference "EFQRCode" */,
+			);
 			productRefGroup = BB0F0FA9283B64C100B3AB12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -192,6 +240,8 @@
 				BB0F0FD4283B87C000B3AB12 /* QRCell.xib in Resources */,
 				BB0F0FB8283B64C300B3AB12 /* LaunchScreen.storyboard in Resources */,
 				BB0F0FCA283B719600B3AB12 /* QRListViewController.xib in Resources */,
+				BB4A6EDD283F900900EB0106 /* ScannerViewController.xib in Resources */,
+				BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */,
 				BB0F0FCE283B71D800B3AB12 /* DashboardViewController.xib in Resources */,
 				BB0F0FC4283B6A0600B3AB12 /* TabsController.xib in Resources */,
 				BB0F0FB5283B64C300B3AB12 /* Assets.xcassets in Resources */,
@@ -208,9 +258,11 @@
 				BB0F0FC3283B6A0600B3AB12 /* TabsController.swift in Sources */,
 				BB0F0FC9283B719600B3AB12 /* QRListViewController.swift in Sources */,
 				BB0F0FD0283B779D00B3AB12 /* VCExtension.swift in Sources */,
+				BB4A6EDC283F900900EB0106 /* ScannerViewController.swift in Sources */,
 				BB0F0FD3283B87C000B3AB12 /* QRCell.swift in Sources */,
 				BB0F0FD6283B8A2600B3AB12 /* CellEx.swift in Sources */,
 				BB0F0FCD283B71D800B3AB12 /* DashboardViewController.swift in Sources */,
+				BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */,
 				BB0F0FAC283B64C100B3AB12 /* AppDelegate.swift in Sources */,
 				BB0F0FAE283B64C100B3AB12 /* SceneDelegate.swift in Sources */,
 			);
@@ -280,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -334,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -355,6 +407,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "qr-station/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "QR Station";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used for scanning codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -383,6 +436,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "qr-station/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "QR Station";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used for scanning codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -422,6 +476,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB4A6ED7283F8F9700EB0106 /* XCRemoteSwiftPackageReference "QRScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mercari/QRScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		BB4A6EDE283F96BF00EB0106 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB4A6ED8283F8F9700EB0106 /* QRScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB4A6ED7283F8F9700EB0106 /* XCRemoteSwiftPackageReference "QRScanner" */;
+			productName = QRScanner;
+		};
+		BB4A6EDF283F96BF00EB0106 /* EFQRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB4A6EDE283F96BF00EB0106 /* XCRemoteSwiftPackageReference "EFQRCode" */;
+			productName = EFQRCode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB0F0FA0283B64C100B3AB12 /* Project object */;
 }

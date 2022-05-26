@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "efqrcode",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EFPrefix/EFQRCode",
+      "state" : {
+        "revision" : "bebbd09eaf28243ec576f6d53cbf9cc5b10eaffb",
+        "version" : "6.2.1"
+      }
+    },
+    {
+      "identity" : "qrscanner",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mercari/QRScanner",
+      "state" : {
+        "revision" : "b9bbcabf8ce54974b56a63f403abc43930684314",
+        "version" : "1.9.0"
+      }
+    },
+    {
+      "identity" : "swift_qrcodejs",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ApolloZhu/swift_qrcodejs.git",
+      "state" : {
+        "revision" : "374dc7f7b9e76c6aeb393f6a84590c6d387e1ecb",
+        "version" : "2.2.2"
+      }
+    }
+  ],
+  "version" : 2
+}

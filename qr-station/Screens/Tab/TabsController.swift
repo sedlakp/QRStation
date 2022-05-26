@@ -25,14 +25,14 @@ class TabsController: UITabBarController {
 
     func makeQrListController() -> UINavigationController {
         let vc = QRListViewController(nibName: "QRListViewController", bundle: nil)
-        vc.tabBarItem = UITabBarItem(title: "List", image: UIImage(systemName: "qrcode"), tag: 0)
+        vc.tabBarItem = UITabBarItem(title: "List", image: UIImage(systemName: "list.dash"), tag: 0)
         let nc = UINavigationController(rootViewController: vc)
         return nc
     }
     
     func makeDashboardController() -> UINavigationController {
         let vc = DashboardViewController(nibName: "DashboardViewController", bundle: nil)
-        vc.tabBarItem = UITabBarItem(title: "QR", image: UIImage(systemName: "list.dash"), tag: 1)
+        vc.tabBarItem = UITabBarItem(title: "QR", image: UIImage(systemName: "qrcode"), tag: 1)
         let nc = UINavigationController(rootViewController: vc)
         return nc
     }
