@@ -25,6 +25,9 @@
 		BB4A6EDC283F900900EB0106 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */; };
 		BB4A6EDD283F900900EB0106 /* ScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A6EDB283F900900EB0106 /* ScannerViewController.xib */; };
 		BB4A6EE0283F96BF00EB0106 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6EDF283F96BF00EB0106 /* EFQRCode */; };
+		BB4A6EE2283F980200EB0106 /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */; };
+		BB4A6EE4283F982100EB0106 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE3283F982100EB0106 /* QRCode.swift */; };
+		BB4A6EE6283F9A9400EB0106 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */; };
 		BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABA3FE283E653E0056221D /* CreateQRViewController.swift */; };
 		BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBABA3FF283E653E0056221D /* CreateQRViewController.xib */; };
 /* End PBXBuildFile section */
@@ -48,6 +51,9 @@
 		BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEx.swift; sourceTree = "<group>"; };
 		BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		BB4A6EDB283F900900EB0106 /* ScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerViewController.xib; sourceTree = "<group>"; };
+		BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
+		BB4A6EE3283F982100EB0106 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
 		BBABA3FE283E653E0056221D /* CreateQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRViewController.swift; sourceTree = "<group>"; };
 		BBABA3FF283E653E0056221D /* CreateQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateQRViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +92,8 @@
 			children = (
 				BB0F0FAB283B64C100B3AB12 /* AppDelegate.swift */,
 				BB0F0FAD283B64C100B3AB12 /* SceneDelegate.swift */,
+				BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */,
+				BB4A6EE3283F982100EB0106 /* QRCode.swift */,
 				BB0F0FD7283B8A2C00B3AB12 /* Extensions */,
 				BB0F0FD8283B8B8900B3AB12 /* Cells */,
 				BB0F0FC0283B695B00B3AB12 /* Screens */,
@@ -140,6 +148,7 @@
 			children = (
 				BB0F0FCF283B779D00B3AB12 /* VCExtension.swift */,
 				BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */,
+				BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,10 +269,13 @@
 				BB0F0FD0283B779D00B3AB12 /* VCExtension.swift in Sources */,
 				BB4A6EDC283F900900EB0106 /* ScannerViewController.swift in Sources */,
 				BB0F0FD3283B87C000B3AB12 /* QRCell.swift in Sources */,
+				BB4A6EE4283F982100EB0106 /* QRCode.swift in Sources */,
 				BB0F0FD6283B8A2600B3AB12 /* CellEx.swift in Sources */,
 				BB0F0FCD283B71D800B3AB12 /* DashboardViewController.swift in Sources */,
 				BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */,
+				BB4A6EE6283F9A9400EB0106 /* ArrayEx.swift in Sources */,
 				BB0F0FAC283B64C100B3AB12 /* AppDelegate.swift in Sources */,
+				BB4A6EE2283F980200EB0106 /* QRCodeManager.swift in Sources */,
 				BB0F0FAE283B64C100B3AB12 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,8 @@
 import UIKit
 
 class QRListViewController: UIViewController {
+    
+    let qrManager = QRCodeManager.shared
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,21 +23,31 @@ class QRListViewController: UIViewController {
         tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
 }
 
 
 extension QRListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return qrManager.qrCodes.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QRCell", for: indexPath) as! QRCell
-        cell.titleText.text = "\(indexPath)"
-        cell.titleText.textColor = .black
-        
+        var qr = qrManager.qrCodes[indexPath.row]
+        cell.titleText.text = "\(qr.string)"
+        cell.titleText.textColor = .label
+        cell.qrImage.image = qr.qr
         return cell
     }
     

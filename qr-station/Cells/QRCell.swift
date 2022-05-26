@@ -10,6 +10,7 @@ import UIKit
 class QRCell: UITableViewCell {
     
     @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var qrImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

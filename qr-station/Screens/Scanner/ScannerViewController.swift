@@ -11,6 +11,8 @@ import AVFoundation
 
 class ScannerViewController: UIViewController {
     
+    let qrManager = QRCodeManager.shared
+    
     lazy var qrScannerView: QRScannerView = {
         return QRScannerView(frame: view.bounds)
     }()
@@ -18,7 +20,7 @@ class ScannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupQRScanner()
-        // Do any additional setup after loading the view.
+        
     }
     
 
@@ -62,6 +64,10 @@ extension ScannerViewController: QRScannerViewDelegate {
     }
 
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
-        print(code)
+        
+        // TODO: Show screen to confirm adding the qr code - use bulletinboard? -> it will show the created QR object
+        let qr = QRCode(string: code, whereFrom: .camera, appearedDate: Date.now)
+        qrManager.add(qr)
+        
     }
 }
