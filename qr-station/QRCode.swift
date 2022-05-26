@@ -68,7 +68,9 @@ struct QRCode: Equatable, QRProtocol {
 }
 
 /// Realm version of the QRCode object
-class QRCodeRLM: Object, QRProtocol {
+class QRCodeRLM: Object, QRProtocol, ObjectKeyIdentifiable {
+    
+    @Persisted(primaryKey: true) var _id: ObjectId
     
     @Persisted var string: String
     @Persisted var whereFromStr: String

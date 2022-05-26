@@ -32,6 +32,12 @@ class RealmService {
         }
     }
     
+    func delete(_ object: Object) {
+        try! realm.write {
+            realm.delete(object)
+        }
+    }
+    
     func deleteAll() {
         try! realm.write {
             realm.deleteAll()

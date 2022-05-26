@@ -45,7 +45,7 @@ extension QRListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QRCell", for: indexPath) as! QRCell
-        var qr = qrManager.qrCodes[indexPath.row]
+        let qr = qrManager.qrCodes[indexPath.row]
         cell.titleText.text = "\(qr.string)"
         cell.titleText.textColor = .label
         cell.qrImage.image = qr.qr
