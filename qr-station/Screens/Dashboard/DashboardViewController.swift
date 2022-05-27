@@ -18,12 +18,15 @@ class DashboardViewController: UIViewController {
         return BLTNItemManager(rootItem: rootItem)
     }()
     
+    @IBOutlet weak var scanTitleLbl: UILabel!
     @IBOutlet weak var qrScanLbl: UILabel!
     @IBOutlet weak var qrScanBtn: UIButton!
+    @IBOutlet weak var scanBkgView: UIView!
     
     @IBOutlet weak var qrImageScanLbl: UILabel!
     @IBOutlet weak var qrImageScanBtn: UIButton!
     
+    @IBOutlet weak var createBkgView: UIView!
     @IBOutlet weak var qrCreateLbl: UILabel!
     @IBOutlet weak var qrCreateBtn: UIButton!
     
@@ -36,10 +39,19 @@ class DashboardViewController: UIViewController {
 //        qrScanBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 //
 //        qrCreateBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        
-        qrScanLbl.text = "Scan a QR code (Camera)"
-        qrImageScanLbl.text = "Scan a QR code (Image)"
+        scanTitleLbl.text = "Scan a QR code"
+        scanTitleLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        qrScanLbl.text = "From camera"
+        qrScanLbl.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
+        qrImageScanLbl.text = "From image"
+        qrImageScanLbl.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
         qrCreateLbl.text = "Create a QR code"
+        qrCreateLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        
+        scanBkgView.layer.cornerRadius = 12
+        createBkgView.layer.cornerRadius = 12
+        scanBkgView.backgroundColor = .secondarySystemBackground
+        createBkgView.backgroundColor = .secondarySystemBackground
         
         qrScanBtn.addTarget(self, action: #selector(scanBtnTapped), for: .touchUpInside)
         qrImageScanBtn.addTarget(self, action: #selector(importPicture), for: .touchUpInside)
