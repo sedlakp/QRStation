@@ -19,8 +19,12 @@ class TabsController: UITabBarController {
         
         self.viewControllers = [vc1,vc2]
         
-        
-        // Do any additional setup after loading the view.
+        // this makes the tab bar not transparent on new iOS version
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundEffect = UIBlurEffect(style: .regular)
+            tabBar.scrollEdgeAppearance = appearance
+        }
     }
 
     func makeQrListController() -> UINavigationController {

@@ -7,10 +7,16 @@
 
 import UIKit
 import EFQRCode
+import BLTNBoard
 
 class DashboardViewController: UIViewController {
     
     let qrManager = QRCodeManager.shared
+    
+    lazy var bulletinManager: BLTNItemManager = {
+        let rootItem = BLTNPageItem(title: "QR found")
+        return BLTNItemManager(rootItem: rootItem)
+    }()
     
     @IBOutlet weak var qrScanLbl: UILabel!
     @IBOutlet weak var qrScanBtn: UIButton!
@@ -74,11 +80,26 @@ class DashboardViewController: UIViewController {
             if !codes.isEmpty {
                 // get only the first one for now
                 let qr = QRCode(string: codes.first!, whereFrom: .image, appearedDate: Date.now)
-                qrManager.add(qr)
+                showBulletin(from: qr)
             } else {
                 print("No QR code found")
             }
         }
+    }
+    
+    private func showBulletin(from qr: QRCode) {
+        let item = BLTNPageItem(title: "Found QR code")
+        item.image = qr.smallQr
+        item.descriptionText = qr.string
+        item.descriptionLabel?.textColor = .label
+        item.actionButtonTitle = "Save"
+        item.actionHandler = { [weak self] _ in
+            self?.qrManager.add(qr)
+            self?.bulletinManager.dismissBulletin()
+        }
+        
+        bulletinManager = BLTNItemManager(rootItem: item)
+        bulletinManager.showBulletin(above: self)
     }
 
 }
