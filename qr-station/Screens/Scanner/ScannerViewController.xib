@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScannerViewController" customModule="qr_station" customModuleProvider="target">
             <connections>
-                <outlet property="qrScannerView" destination="Ia0-8S-XG2" id="BbF-M7-n79"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,20 +17,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ia0-8S-XG2" customClass="QRScannerView" customModule="QRScanner">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="Ia0-8S-XG2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GTq-gK-5mV"/>
-                <constraint firstItem="Ia0-8S-XG2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QaU-ad-LgY"/>
-                <constraint firstAttribute="bottom" secondItem="Ia0-8S-XG2" secondAttribute="bottom" id="oLD-ua-yXa"/>
-                <constraint firstItem="Ia0-8S-XG2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uom-uL-PC0"/>
-            </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </view>
     </objects>

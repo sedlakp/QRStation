@@ -12,8 +12,6 @@ import AVFoundation
 class ScannerViewController: UIViewController {
     
     let qrManager = QRCodeManager.shared
-    
-    @IBOutlet weak var qrScannerView: QRScannerView! // TODO: The scanner indicator is not centered
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +23,9 @@ class ScannerViewController: UIViewController {
     private func setupQRScanner() {
             switch AVCaptureDevice.authorizationStatus(for: .video) {
             case .authorized:
-                setupQRScannerView()
+                DispatchQueue.main.async { [weak self] in
+                    self?.setupQRScannerView()
+                }
             case .notDetermined:
                 AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
                     if granted {
@@ -40,6 +40,7 @@ class ScannerViewController: UIViewController {
         }
     
     private func setupQRScannerView() {
+        let qrScannerView = QRScannerView(frame: view.bounds)
         view.addSubview(qrScannerView)
         qrScannerView.configure(delegate: self, input: .init(isBlurEffectEnabled: true))
         qrScannerView.startRunning()
