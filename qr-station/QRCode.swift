@@ -27,6 +27,20 @@ extension QRProtocol {
             return .text
         }
     }
+    
+    // Create nicer qr code to show
+    var qr: UIImage? {
+        let cgImage = EFQRCode.generate(for: string)
+        guard let cgImage = cgImage else { return nil }
+        return UIImage(cgImage: cgImage)
+    }
+    
+    var smallQr: UIImage? {
+        guard let qr = qr else { return nil}
+        let targetSize = CGSize(width: 100, height: 100)
+        return qr.scalePreservingAspectRatio(targetSize: targetSize)
+    }
+    
 }
 
 struct QRCode: Equatable, QRProtocol {
@@ -50,14 +64,6 @@ struct QRCode: Equatable, QRProtocol {
     
     // var numberScanned
     
-    // Create nicer qr code to show
-    lazy private(set) var qr: UIImage? = {
-        let cgImage = EFQRCode.generate(for: string)
-        guard let cgImage = cgImage else { return nil }
-        return UIImage(cgImage: cgImage)
-    }()
-    
-    
     func toRLM() -> QRCodeRLM {
         let qrRLM = QRCodeRLM()
         qrRLM.string = string
@@ -79,11 +85,4 @@ class QRCodeRLM: Object, QRProtocol, ObjectKeyIdentifiable {
     var whereFrom: QRCode.WhereFrom {
         return QRCode.WhereFrom(rawValue: whereFromStr) ?? .unknown
     }
-    
-    // Create nicer qr code to show
-    lazy private(set) var qr: UIImage? = {
-        let cgImage = EFQRCode.generate(for: string)
-        guard let cgImage = cgImage else { return nil }
-        return UIImage(cgImage: cgImage)
-    }()
 }
