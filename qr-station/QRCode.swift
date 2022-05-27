@@ -13,6 +13,8 @@ import RealmSwift
 // Protocol to reuse code same for both QR classes
 protocol QRProtocol {
     var string: String { get }
+    var appearedDate: Date { get }
+    var whereFrom: QRCode.WhereFrom { get }
 }
 
 extension QRProtocol {
@@ -41,6 +43,12 @@ extension QRProtocol {
         return qr.scalePreservingAspectRatio(targetSize: targetSize)
     }
     
+    var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter.string(from: appearedDate)
+    }
+    
 }
 
 struct QRCode: Equatable, QRProtocol {
@@ -50,6 +58,24 @@ struct QRCode: Equatable, QRProtocol {
         case image
         case created
         case unknown
+        
+        var detail: String {
+            switch self {
+            case .camera: return "Camera scan"
+            case .image: return "Image scan"
+            case .created: return "Created"
+            case .unknown: return "???"
+            }
+        }
+        
+        var color: UIColor {
+            switch self {
+            case .camera: return .systemTeal
+            case .image: return .systemBrown
+            case .created: return .systemPink
+            case .unknown: return .systemGray
+            }
+        }
     }
     
     // Enum to know what kind of UI and content should be shown

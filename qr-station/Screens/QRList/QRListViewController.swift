@@ -16,13 +16,16 @@ class QRListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "List"
+        title = "QR Codes"
         navigationItem.title = "QR Codes"
         
         tableView.register(QRCell.nib, forCellReuseIdentifier: QRCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorInset = .zero
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,9 +49,7 @@ extension QRListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QRCell", for: indexPath) as! QRCell
         let qr = qrManager.qrCodes[indexPath.row]
-        cell.titleText.text = "\(qr.string)"
-        cell.titleText.textColor = .label
-        cell.qrImage.image = qr.qr
+        cell.setupCell(with: qr)
         return cell
     }
     
@@ -65,5 +66,11 @@ extension QRListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let qr = qrManager.qrCodes[indexPath.row]
+        if let url = qr.url {
+            UIApplication.shared.open(url)
+        }
+        
+    }
 }

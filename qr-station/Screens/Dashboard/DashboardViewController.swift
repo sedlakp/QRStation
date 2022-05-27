@@ -29,7 +29,7 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "QR"
+        title = "Station"
         navigationItem.title = "QR Station"
         
         // https://stackoverflow.com/questions/68328038/imageedgeinsets-was-deprecated-in-ios-15-0
