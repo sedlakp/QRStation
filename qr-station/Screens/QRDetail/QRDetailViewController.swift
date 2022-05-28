@@ -24,6 +24,7 @@ class QRDetailViewController: UIViewController {
         textLbl.backgroundColor = .secondarySystemBackground
         textLbl.layer.masksToBounds = true
         textLbl.layer.cornerRadius = 12
+        textLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         linkBtn.addTarget(self, action: #selector(openUrl), for: .touchUpInside)
         shareBtn.addTarget(self, action: #selector(share), for: .touchUpInside)
         btnsBkgView.backgroundColor = .secondarySystemBackground
