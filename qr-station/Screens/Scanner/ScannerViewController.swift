@@ -30,23 +30,23 @@ class ScannerViewController: UIViewController {
     }
 
     private func setupQRScanner() {
-            switch AVCaptureDevice.authorizationStatus(for: .video) {
-            case .authorized:
-                DispatchQueue.main.async { [weak self] in
-                    self?.setupQRScannerView()
-                }
-            case .notDetermined:
-                AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
-                    if granted {
-                        DispatchQueue.main.async { [weak self] in
-                            self?.setupQRScannerView()
-                        }
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            DispatchQueue.main.async { [weak self] in
+                self?.setupQRScannerView()
+            }
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
+                if granted {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.setupQRScannerView()
                     }
                 }
-            default:
-                showAlert()
             }
+        default:
+            showAlert()
         }
+    }
     
     private func setupQRScannerView() {
         let qrScannerView = QRScannerView(frame: view.bounds)
@@ -70,8 +70,8 @@ class ScannerViewController: UIViewController {
         item.descriptionText = qr.string
         item.descriptionLabel?.textColor = .label
         item.actionButtonTitle = "Save"
-        item.appearance.actionButtonColor = .tintColor
-        item.appearance.alternativeButtonTitleColor = .tintColor
+        item.appearance.actionButtonColor = forcedTintColor
+        item.appearance.alternativeButtonTitleColor = forcedTintColor
         item.actionHandler = { [weak self] _ in
             self?.qrManager.add(qr)
             self?.bulletinManager.dismissBulletin()
@@ -81,6 +81,7 @@ class ScannerViewController: UIViewController {
         }
         
         bulletinManager = BLTNItemManager(rootItem: item)
+        bulletinManager.backgroundColor = .secondarySystemBackground
         bulletinManager.showBulletin(above: self)
     }
 

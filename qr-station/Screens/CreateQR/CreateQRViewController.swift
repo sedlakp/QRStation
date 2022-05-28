@@ -86,8 +86,8 @@ class CreateQRViewController: UIViewController {
     
     private func showBulletin(from qr: QRCode) {
         let item = BLTNPageItem(title: "QR code created")
-        item.appearance.actionButtonColor = .tintColor
-        item.appearance.alternativeButtonTitleColor = .tintColor
+        item.appearance.actionButtonColor = forcedTintColor
+        item.appearance.alternativeButtonTitleColor = forcedTintColor
         item.image = qr.smallQr
         item.descriptionText = qr.string
         item.descriptionLabel?.textColor = .label
@@ -105,6 +105,7 @@ class CreateQRViewController: UIViewController {
             self?.bulletinManager.dismissBulletin()
         }
         bulletinManager = BLTNItemManager(rootItem: item)
+        bulletinManager.backgroundColor = .secondarySystemBackground
         bulletinManager.showBulletin(above: self)
     }
 

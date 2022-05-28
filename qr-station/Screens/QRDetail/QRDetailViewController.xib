@@ -29,10 +29,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kej-tL-1V9">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="536.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="546.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="BSC-Bp-X4G">
-                                    <rect key="frame" x="60" y="40" width="294" height="466.5"/>
+                                    <rect key="frame" x="60" y="40" width="294" height="476.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4oV-lE-Z3d">
                                             <rect key="frame" x="0.0" y="0.0" width="294" height="294"/>
@@ -41,13 +41,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZT-Cz-qIB" customClass="PaddingLabel" customModule="qr_station" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="324" width="294" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="324" width="294" height="30.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcg-CH-371">
-                                            <rect key="frame" x="0.0" y="374.5" width="294" height="92"/>
+                                            <rect key="frame" x="0.0" y="384.5" width="294" height="92"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aNY-oA-86V">
                                                     <rect key="frame" x="37" y="16" width="220" height="60"/>
@@ -132,6 +132,11 @@
             <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
         </view>
     </objects>
+    <designables>
+        <designable name="VZT-Cz-qIB">
+            <size key="intrinsicContentSize" width="55.5" height="30.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="doc.on.clipboard" catalog="system" width="116" height="128"/>
         <image name="safari" catalog="system" width="128" height="121"/>

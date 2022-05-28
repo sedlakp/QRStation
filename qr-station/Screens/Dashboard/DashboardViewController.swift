@@ -99,8 +99,8 @@ class DashboardViewController: UIViewController {
     
     private func showBulletin(from qr: QRCode) {
         let item = BLTNPageItem(title: "Found QR code")
-        item.appearance.actionButtonColor = .tintColor
-        item.appearance.alternativeButtonTitleColor = .tintColor
+        item.appearance.actionButtonColor = forcedTintColor
+        item.appearance.alternativeButtonTitleColor = forcedTintColor
         item.image = qr.smallQr
         item.descriptionText = qr.string
         item.descriptionLabel?.textColor = .label
@@ -111,13 +111,14 @@ class DashboardViewController: UIViewController {
         }
         
         bulletinManager = BLTNItemManager(rootItem: item)
+        bulletinManager.backgroundColor = .secondarySystemBackground
         bulletinManager.showBulletin(above: self)
     }
     
     private func showNotFoundBulletin() {
         let item = BLTNPageItem(title: "No QR code")
-        item.appearance.actionButtonColor = .tintColor
-        item.appearance.alternativeButtonTitleColor = .tintColor
+        item.appearance.actionButtonColor = forcedTintColor
+        item.appearance.alternativeButtonTitleColor = forcedTintColor
         //item.image = UIImage(systemName: "exclamationmark.triangle")
         item.descriptionText = "No QR code was found in the selected image"
         item.descriptionLabel?.textColor = .label
@@ -127,6 +128,7 @@ class DashboardViewController: UIViewController {
         }
         
         bulletinManager = BLTNItemManager(rootItem: item)
+        bulletinManager.backgroundColor = .secondarySystemBackground
         bulletinManager.showBulletin(above: self)
     }
 

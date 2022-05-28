@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let first = TabsController(nibName: "TabsController", bundle: nil)
         //let nc = UINavigationController(rootViewController: first)
-        window.tintColor = .systemPurple
+        window.tintColor = forcedTintColor
         window.rootViewController = first
         window.makeKeyAndVisible()
         self.window = window

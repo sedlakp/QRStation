@@ -13,3 +13,17 @@ This app will allow to scan for QR codes and will save them in a list. There wil
 * [Setting up xib-controller initialization](https://stackoverflow.com/questions/4763519/loaded-nib-but-the-view-outlet-was-not-set?rq=1)
 * [Same topic as above](https://imjhk03.github.io/posts/create-viewcontroller-from-xib/)
 * [Observing with Combine](https://cocoacasts.com/combine-fundamentals-observing-a-text-field-with-combine)
+
+## Screenshots
+
+Main Screen  
+<img src="/screenshots/img01.png" width="200">
+
+QR code found  
+<img src="/screenshots/IMG_5466.PNG" width="200">
+
+Scanned/created QR code list  
+<img src="/screenshots/IMG_5467.PNG" width="200">
+
+QR code detail (after tapping on a table view cell)  
+<img src="/screenshots/IMG_5468.PNG" width="200">
