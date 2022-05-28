@@ -20,6 +20,7 @@ class QRListVM: NSObject {
 
 extension QRListVM: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
+        qrCodes.isEmpty ? tableView.setEmptyScreen() : tableView.removeEmptyScreen()
         return 1
     }
     
