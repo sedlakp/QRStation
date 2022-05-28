@@ -19,15 +19,15 @@ protocol QRProtocol {
 
 extension QRProtocol {
     var url: URL? {
+        // TODO: more robust link detection
+        if string.starts(with: "www") {
+            return URL(string: "https://" + string)
+        }
         return URL(string: string)
     }
     
     var content: QRCode.Content {
-        if let _ = url {
-            return .url
-        } else {
-            return .text
-        }
+        return url?.isValidUrl() ?? false ? .url : .text
     }
     
     // Create nicer qr code to show

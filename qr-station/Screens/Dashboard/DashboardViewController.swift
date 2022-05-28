@@ -83,7 +83,6 @@ class DashboardViewController: UIViewController {
         guard let image = info[.editedImage] as? UIImage else { return }
         dismiss(animated: true)
         getQR(from: image)
-        // TODO: Show the bulletin board after creating the qr object
     }
     
     private func getQR(from image: UIImage) {

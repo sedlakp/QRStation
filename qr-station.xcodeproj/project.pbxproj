@@ -35,6 +35,9 @@
 		BB4A6EEF283FC9E800EB0106 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6EEE283FC9E800EB0106 /* Realm */; };
 		BB4A6EF1283FC9E800EB0106 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6EF0283FC9E800EB0106 /* RealmSwift */; };
 		BB4A6EF3283FCA7F00EB0106 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EF2283FCA7F00EB0106 /* RealmService.swift */; };
+		BB54E9F42841DE8100559FA9 /* QRDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54E9F22841DE8100559FA9 /* QRDetailViewController.swift */; };
+		BB54E9F52841DE8100559FA9 /* QRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB54E9F32841DE8100559FA9 /* QRDetailViewController.xib */; };
+		BB54E9F72841EDC800559FA9 /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54E9F62841EDC800559FA9 /* StringEx.swift */; };
 		BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABA3FE283E653E0056221D /* CreateQRViewController.swift */; };
 		BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBABA3FF283E653E0056221D /* CreateQRViewController.xib */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,9 @@
 		BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
 		BB4A6EE8283FBAA600EB0106 /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
 		BB4A6EF2283FCA7F00EB0106 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		BB54E9F22841DE8100559FA9 /* QRDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDetailViewController.swift; sourceTree = "<group>"; };
+		BB54E9F32841DE8100559FA9 /* QRDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRDetailViewController.xib; sourceTree = "<group>"; };
+		BB54E9F62841EDC800559FA9 /* StringEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEx.swift; sourceTree = "<group>"; };
 		BBABA3FE283E653E0056221D /* CreateQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRViewController.swift; sourceTree = "<group>"; };
 		BBABA3FF283E653E0056221D /* CreateQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateQRViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +141,7 @@
 				BBABA402283E65470056221D /* CreateQR */,
 				BBABA3FB283E64C40056221D /* Scanner */,
 				BB0F0FC5283B6A1100B3AB12 /* Tab */,
+				BB54E9F12841DE5E00559FA9 /* QRDetail */,
 				BB0F0FC6283B716F00B3AB12 /* QRList */,
 				BB0F0FBF283B694C00B3AB12 /* Dashboard */,
 			);
@@ -167,6 +174,7 @@
 				BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */,
 				BB4A6EE8283FBAA600EB0106 /* UITextFieldEx.swift */,
 				BB455BD12840C2510043C9AB /* UIImgEx.swift */,
+				BB54E9F62841EDC800559FA9 /* StringEx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -178,6 +186,15 @@
 				BB0F0FD2283B87C000B3AB12 /* QRCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BB54E9F12841DE5E00559FA9 /* QRDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BB54E9F22841DE8100559FA9 /* QRDetailViewController.swift */,
+				BB54E9F32841DE8100559FA9 /* QRDetailViewController.xib */,
+			);
+			path = QRDetail;
 			sourceTree = "<group>";
 		};
 		BBABA3FB283E64C40056221D /* Scanner */ = {
@@ -276,6 +293,7 @@
 				BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */,
 				BB0F0FCE283B71D800B3AB12 /* DashboardViewController.xib in Resources */,
 				BB0F0FC4283B6A0600B3AB12 /* TabsController.xib in Resources */,
+				BB54E9F52841DE8100559FA9 /* QRDetailViewController.xib in Resources */,
 				BB0F0FB5283B64C300B3AB12 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB54E9F42841DE8100559FA9 /* QRDetailViewController.swift in Sources */,
 				BB455BD22840C2510043C9AB /* UIImgEx.swift in Sources */,
 				BB0F0FC3283B6A0600B3AB12 /* TabsController.swift in Sources */,
 				BB0F0FC9283B719600B3AB12 /* QRListViewController.swift in Sources */,
@@ -300,6 +319,7 @@
 				BB0F0FCD283B71D800B3AB12 /* DashboardViewController.swift in Sources */,
 				BB455BD62840D7FF0043C9AB /* PaddingLabel.swift in Sources */,
 				BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */,
+				BB54E9F72841EDC800559FA9 /* StringEx.swift in Sources */,
 				BB4A6EE6283F9A9400EB0106 /* ArrayEx.swift in Sources */,
 				BB0F0FAC283B64C100B3AB12 /* AppDelegate.swift in Sources */,
 				BB4A6EE2283F980200EB0106 /* QRCodeManager.swift in Sources */,
@@ -451,7 +471,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,7 +501,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

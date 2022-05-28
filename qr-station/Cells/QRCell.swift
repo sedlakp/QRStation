@@ -23,6 +23,7 @@ class QRCell: UITableViewCell {
         titleText.textColor = .label
         titleText.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         whereFromLbl.font = UIFont.systemFont(ofSize: 9, weight: .semibold)
+        whereFromLbl.textColor = .white
         qrImage.layer.cornerRadius = 4
         
     }

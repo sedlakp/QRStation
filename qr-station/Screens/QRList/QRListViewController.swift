@@ -68,9 +68,9 @@ extension QRListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let qr = qrManager.qrCodes[indexPath.row]
-        if let url = qr.url {
-            UIApplication.shared.open(url)
-        }
+        let vc = QRDetailViewController()
+        vc.qr = qr
+        self.present(vc, animated: true)
         
     }
 }
