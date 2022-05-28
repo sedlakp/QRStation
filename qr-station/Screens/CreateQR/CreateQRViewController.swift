@@ -33,24 +33,26 @@ class CreateQRViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = "Create QR Code"
+        createQR.addTarget(self, action: #selector(createQRCode), for: .touchUpInside)
+        pasteBtn.addTarget(self, action: #selector(pasteTapped), for: .touchUpInside)
+        setupUI()
+        setupBindings()
+    }
+    
+    private func setupUI() {
         orLbl.text = "or"
         qrImage.backgroundColor = .white
         qrImage.layer.cornerRadius = 4
         txtField.placeholder = "Type the QR Code content"
-        
         createQR.setTitle("Create", for: .normal)
-
-        createQR.addTarget(self, action: #selector(createQRCode), for: .touchUpInside)
         createQR.isEnabled = false
-        
-        pasteBtn.addTarget(self, action: #selector(pasteTapped), for: .touchUpInside)
-        
+    }
+    
+    private func setupBindings() {
         txtField.textPublisher.sink { [weak self] str in
             self?.textFldChanged(with: str)
         }.store(in: &subscriptions)
-        
     }
     
     private func textFldChanged(with str: String) {

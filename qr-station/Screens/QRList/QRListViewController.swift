@@ -17,14 +17,16 @@ class QRListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "QR Codes"
-        
+        tableViewSetup()
+    }
+    
+    private func tableViewSetup() {
         tableView.register(QRCell.nib, forCellReuseIdentifier: QRCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorInset = .zero
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

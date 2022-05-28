@@ -34,10 +34,15 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "QR Station"
         
-        // https://stackoverflow.com/questions/68328038/imageedgeinsets-was-deprecated-in-ios-15-0
-//        qrScanBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//
-//        qrCreateBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        setupUI()
+        
+        qrScanBtn.addTarget(self, action: #selector(scanBtnTapped), for: .touchUpInside)
+        qrImageScanBtn.addTarget(self, action: #selector(importPicture), for: .touchUpInside)
+        qrCreateBtn.addTarget(self, action: #selector(createTapped), for: .touchUpInside)
+        
+    }
+    
+    private func setupUI() {
         scanTitleLbl.text = "Scan a QR code"
         scanTitleLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         qrScanLbl.text = "From camera"
@@ -51,11 +56,6 @@ class DashboardViewController: UIViewController {
         createBkgView.layer.cornerRadius = 12
         scanBkgView.backgroundColor = .secondarySystemBackground
         createBkgView.backgroundColor = .secondarySystemBackground
-        
-        qrScanBtn.addTarget(self, action: #selector(scanBtnTapped), for: .touchUpInside)
-        qrImageScanBtn.addTarget(self, action: #selector(importPicture), for: .touchUpInside)
-        qrCreateBtn.addTarget(self, action: #selector(createTapped), for: .touchUpInside)
-        
     }
 
 
@@ -92,7 +92,7 @@ class DashboardViewController: UIViewController {
                 let qr = QRCode(string: codes.first!, whereFrom: .image, appearedDate: Date.now)
                 showBulletin(from: qr)
             } else {
-                print("No QR code found")
+                showNotFoundBulletin()
             }
         }
     }
@@ -107,6 +107,22 @@ class DashboardViewController: UIViewController {
         item.actionButtonTitle = "Save"
         item.actionHandler = { [weak self] _ in
             self?.qrManager.add(qr)
+            self?.bulletinManager.dismissBulletin()
+        }
+        
+        bulletinManager = BLTNItemManager(rootItem: item)
+        bulletinManager.showBulletin(above: self)
+    }
+    
+    private func showNotFoundBulletin() {
+        let item = BLTNPageItem(title: "No QR code")
+        item.appearance.actionButtonColor = .tintColor
+        item.appearance.alternativeButtonTitleColor = .tintColor
+        //item.image = UIImage(systemName: "exclamationmark.triangle")
+        item.descriptionText = "No QR code was found in the selected image"
+        item.descriptionLabel?.textColor = .label
+        item.actionButtonTitle = "OK"
+        item.actionHandler = { [weak self] _ in
             self?.bulletinManager.dismissBulletin()
         }
         

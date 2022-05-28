@@ -23,7 +23,6 @@ class ScannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupQRScanner()
-        
     }
     
     deinit{
@@ -67,12 +66,12 @@ class ScannerViewController: UIViewController {
     
     private func showBulletin(from qr: QRCode) {
         let item = BLTNPageItem(title: "Found QR code")
-        item.appearance.actionButtonColor = .tintColor
-        item.appearance.alternativeButtonTitleColor = .tintColor
         item.image = qr.smallQr
         item.descriptionText = qr.string
         item.descriptionLabel?.textColor = .label
         item.actionButtonTitle = "Save"
+        item.appearance.actionButtonColor = .tintColor
+        item.appearance.alternativeButtonTitleColor = .tintColor
         item.actionHandler = { [weak self] _ in
             self?.qrManager.add(qr)
             self?.bulletinManager.dismissBulletin()
@@ -90,14 +89,11 @@ class ScannerViewController: UIViewController {
 
 extension ScannerViewController: QRScannerViewDelegate {
     func qrScannerView(_ qrScannerView: QRScannerView, didFailure error: QRScannerError) {
-        print(error)
+        print(error) // TODO: Handle error
     }
 
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
-        
-        // TODO: Show screen to confirm adding the qr code - use bulletinboard? -> it will show the created QR object
         let qr = QRCode(string: code, whereFrom: .camera, appearedDate: Date.now)
         showBulletin(from: qr)
-        
     }
 }

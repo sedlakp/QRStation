@@ -22,13 +22,18 @@ class QRDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        linkBtn.addTarget(self, action: #selector(openUrl), for: .touchUpInside)
+        shareBtn.addTarget(self, action: #selector(share), for: .touchUpInside)
+        copyToClipboardBtn.addTarget(self, action: #selector(copyString), for: .touchUpInside)
+        uiSetup()
+    }
+    
+    private func uiSetup() {
         textLbl.backgroundColor = .secondarySystemBackground
         textLbl.layer.masksToBounds = true
         textLbl.layer.cornerRadius = 12
         textLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        linkBtn.addTarget(self, action: #selector(openUrl), for: .touchUpInside)
-        shareBtn.addTarget(self, action: #selector(share), for: .touchUpInside)
-        copyToClipboardBtn.addTarget(self, action: #selector(copyString), for: .touchUpInside)
+        textLbl.numberOfLines = 0
         btnsBkgView.backgroundColor = .secondarySystemBackground
         btnsBkgView.layer.cornerRadius = 12
         qrImageView.layer.cornerRadius = 4
@@ -40,7 +45,6 @@ class QRDetailViewController: UIViewController {
         qrImageView.image = qr.qr
         textLbl.text = qr.string
         linkBtn.isHidden = !(qr.url?.isValidUrl() ?? false)
-        
     }
 
     
