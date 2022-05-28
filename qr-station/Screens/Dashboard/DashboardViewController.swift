@@ -32,7 +32,6 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Station"
         navigationItem.title = "QR Station"
         
         // https://stackoverflow.com/questions/68328038/imageedgeinsets-was-deprecated-in-ios-15-0
@@ -100,6 +99,8 @@ class DashboardViewController: UIViewController {
     
     private func showBulletin(from qr: QRCode) {
         let item = BLTNPageItem(title: "Found QR code")
+        item.appearance.actionButtonColor = .tintColor
+        item.appearance.alternativeButtonTitleColor = .tintColor
         item.image = qr.smallQr
         item.descriptionText = qr.string
         item.descriptionLabel?.textColor = .label

@@ -17,6 +17,7 @@ class QRDetailViewController: UIViewController {
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var linkBtn: UIButton!
     @IBOutlet weak var btnsBkgView: UIView!
+    @IBOutlet weak var copyToClipboardBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class QRDetailViewController: UIViewController {
         textLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         linkBtn.addTarget(self, action: #selector(openUrl), for: .touchUpInside)
         shareBtn.addTarget(self, action: #selector(share), for: .touchUpInside)
+        copyToClipboardBtn.addTarget(self, action: #selector(copyString), for: .touchUpInside)
         btnsBkgView.backgroundColor = .secondarySystemBackground
         btnsBkgView.layer.cornerRadius = 12
         qrImageView.layer.cornerRadius = 4
@@ -51,5 +53,10 @@ class QRDetailViewController: UIViewController {
         let items = [qr?.qr]
         let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
         present(ac, animated: true)
+    }
+    
+    @objc private func copyString() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = qr?.string
     }
 }

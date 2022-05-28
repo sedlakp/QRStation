@@ -67,6 +67,8 @@ class ScannerViewController: UIViewController {
     
     private func showBulletin(from qr: QRCode) {
         let item = BLTNPageItem(title: "Found QR code")
+        item.appearance.actionButtonColor = .tintColor
+        item.appearance.alternativeButtonTitleColor = .tintColor
         item.image = qr.smallQr
         item.descriptionText = qr.string
         item.descriptionLabel?.textColor = .label
