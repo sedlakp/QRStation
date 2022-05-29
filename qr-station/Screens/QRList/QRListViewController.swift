@@ -10,6 +10,8 @@ import UIKit
 class QRListViewController: UIViewController {
     
     let vm = QRListVM()
+    
+    let search = UISearchController(searchResultsController: nil)
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,6 +19,8 @@ class QRListViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "QR Codes"
         tableViewSetup()
+        searchSetup()
+        vm.searchUpdatedCallback = { [weak self] in self?.tableView.reloadData() }
     }
     
     private func tableViewSetup() {
@@ -26,6 +30,14 @@ class QRListViewController: UIViewController {
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorInset = .zero
+    }
+    
+    private func searchSetup() {
+        search.searchResultsUpdater = vm
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Search for a QR code content"
+        navigationItem.searchController = search
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

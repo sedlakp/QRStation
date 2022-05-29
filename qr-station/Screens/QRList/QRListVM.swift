@@ -12,16 +12,30 @@ class QRListVM: NSObject {
     
     private let qrManager = QRCodeManager.shared
     
+    private var filterText: String = ""
+    
+    var searchUpdatedCallback: () -> () = {}
+    
     var qrCodes: [QRCodeRLM] {
-        return qrManager.qrCodes
+        if filterText.isEmpty {
+            return qrManager.qrCodes
+        }
+        return qrManager.qrCodes.filter({$0.string.lowercased().contains(filterText)})
+    }
+    
+    private func setEmptyScreen(in tableView: UITableView) {
+        if !filterText.isEmpty {
+            qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Search", and: "No QR codes found.") : tableView.removeEmptyScreen()
+        } else {
+            qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Editing", and: "You have not scanned or created any QR codes yet.") : tableView.removeEmptyScreen()
+        }
     }
     
 }
 
 extension QRListVM: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        // Set the empty screen here
-        qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Editing", and: "You have not scanned or created any QR codes yet.") : tableView.removeEmptyScreen()
+        setEmptyScreen(in: tableView)
         return 1
     }
     
@@ -49,4 +63,13 @@ extension QRListVM: UITableViewDataSource {
         }
     }
 
+}
+
+extension QRListVM: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterText = searchController.searchBar.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        searchUpdatedCallback()
+    }
+    
+    
 }
