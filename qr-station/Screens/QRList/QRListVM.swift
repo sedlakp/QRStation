@@ -20,7 +20,8 @@ class QRListVM: NSObject {
 
 extension QRListVM: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        qrCodes.isEmpty ? tableView.setEmptyScreen() : tableView.removeEmptyScreen()
+        // Set the empty screen here
+        qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Editing", and: "You have not scanned or created any QR codes yet.") : tableView.removeEmptyScreen()
         return 1
     }
     

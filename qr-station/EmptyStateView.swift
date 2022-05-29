@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Lottie
 
 class EmptyStateView: UIView {
 
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var textLbl: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,13 +30,25 @@ class EmptyStateView: UIView {
         self.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
     }
+    
+    convenience init(animationName: String, text: String) {
+        self.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        
+        animationView.animation = Animation.named(animationName)
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        
+        textLbl.text = text
+    }
 
     
     private func setupUI() {
         Bundle.main.loadNibNamed("EmptyStateView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
-        contentView.backgroundColor = .red
+        textLbl.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        textLbl.numberOfLines = 0
         layoutIfNeeded()
     }
 

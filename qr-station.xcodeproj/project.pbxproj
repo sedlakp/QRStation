@@ -21,6 +21,8 @@
 		BB0F0FD3283B87C000B3AB12 /* QRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F0FD1283B87C000B3AB12 /* QRCell.swift */; };
 		BB0F0FD4283B87C000B3AB12 /* QRCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0F0FD2283B87C000B3AB12 /* QRCell.xib */; };
 		BB0F0FD6283B8A2600B3AB12 /* CellEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */; };
+		BB2F36D52842ECA6009FA328 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BB2F36D42842ECA6009FA328 /* Lottie */; };
+		BB2F36DA2842F1B7009FA328 /* Editing.json in Resources */ = {isa = PBXBuildFile; fileRef = BB2F36D92842F1B7009FA328 /* Editing.json */; };
 		BB455BD22840C2510043C9AB /* UIImgEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB455BD12840C2510043C9AB /* UIImgEx.swift */; };
 		BB455BD62840D7FF0043C9AB /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */; };
 		BB4A6ED9283F8F9700EB0106 /* QRScanner in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6ED8283F8F9700EB0106 /* QRScanner */; };
@@ -64,6 +66,7 @@
 		BB0F0FD1283B87C000B3AB12 /* QRCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCell.swift; sourceTree = "<group>"; };
 		BB0F0FD2283B87C000B3AB12 /* QRCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCell.xib; sourceTree = "<group>"; };
 		BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEx.swift; sourceTree = "<group>"; };
+		BB2F36D92842F1B7009FA328 /* Editing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Editing.json; sourceTree = "<group>"; };
 		BB455BD12840C2510043C9AB /* UIImgEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImgEx.swift; sourceTree = "<group>"; };
 		BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 				BB4A6EEF283FC9E800EB0106 /* Realm in Frameworks */,
 				BB4A6EF1283FC9E800EB0106 /* RealmSwift in Frameworks */,
 				BB4A6EE0283F96BF00EB0106 /* EFQRCode in Frameworks */,
+				BB2F36D52842ECA6009FA328 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +131,7 @@
 				BB4A6EE3283F982100EB0106 /* QRCode.swift */,
 				BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */,
 				BB54E9FE2842215800559FA9 /* Constants.swift */,
+				BB2F36D62842EEAE009FA328 /* Resources */,
 				BB54EA0228422B5A00559FA9 /* EmptyStateView.swift */,
 				BB54EA0428422BB000559FA9 /* EmptyStateView.xib */,
 				BB0F0FD7283B8A2C00B3AB12 /* Extensions */,
@@ -203,6 +208,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		BB2F36D62842EEAE009FA328 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB2F36D92842F1B7009FA328 /* Editing.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BB54E9F12841DE5E00559FA9 /* QRDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +265,7 @@
 				BB4A6EEB283FC87F00EB0106 /* BLTNBoard */,
 				BB4A6EEE283FC9E800EB0106 /* Realm */,
 				BB4A6EF0283FC9E800EB0106 /* RealmSwift */,
+				BB2F36D42842ECA6009FA328 /* Lottie */,
 			);
 			productName = "qr-station";
 			productReference = BB0F0FA8283B64C100B3AB12 /* qr-station.app */;
@@ -286,6 +300,7 @@
 				BB4A6EDE283F96BF00EB0106 /* XCRemoteSwiftPackageReference "EFQRCode" */,
 				BB4A6EEA283FC87F00EB0106 /* XCRemoteSwiftPackageReference "BulletinBoard" */,
 				BB4A6EED283FC9E800EB0106 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				BB2F36D32842ECA6009FA328 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = BB0F0FA9283B64C100B3AB12 /* Products */;
 			projectDirPath = "";
@@ -301,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2F36DA2842F1B7009FA328 /* Editing.json in Resources */,
 				BB0F0FD4283B87C000B3AB12 /* QRCell.xib in Resources */,
 				BB0F0FB8283B64C300B3AB12 /* LaunchScreen.storyboard in Resources */,
 				BB0F0FCA283B719600B3AB12 /* QRListViewController.xib in Resources */,
@@ -559,6 +575,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BB2F36D32842ECA6009FA328 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		BB4A6ED7283F8F9700EB0106 /* XCRemoteSwiftPackageReference "QRScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mercari/QRScanner";
@@ -594,6 +618,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB2F36D42842ECA6009FA328 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2F36D32842ECA6009FA328 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		BB4A6ED8283F8F9700EB0106 /* QRScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BB4A6ED7283F8F9700EB0106 /* XCRemoteSwiftPackageReference "QRScanner" */;
