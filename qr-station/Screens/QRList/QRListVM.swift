@@ -15,6 +15,7 @@ class QRListVM: NSObject {
     private var filterText: String = ""
     
     var searchUpdatedCallback: () -> () = {}
+    var updateAtIndexCallback: (IndexPath) -> () = {_ in}
     
     var qrCodes: [QRCodeRLM] {
         if filterText.isEmpty {
@@ -29,6 +30,22 @@ class QRListVM: NSObject {
         } else {
             qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Editing", and: "You have not scanned or created any QR codes yet.") : tableView.removeEmptyScreen()
         }
+    }
+    
+    func setQRFavoriteStatus(qr: QRCodeRLM) {
+        qrManager.setFavoriteStatus(qr: qr)
+    }
+    
+    func setFavoriteAction(forIndex index: IndexPath) -> UIContextualAction {
+        let qr = qrCodes[index.row]
+        let action = UIContextualAction(style: .normal, title: qr.isFavorite ? "Unfavorite": "Favorite")
+            { [weak self] (action, view, completionHandler) in
+                self?.setQRFavoriteStatus(qr:qr)
+                self?.updateAtIndexCallback(index)
+                completionHandler(true)
+            }
+        action.backgroundColor = .systemYellow
+        return action
     }
     
 }

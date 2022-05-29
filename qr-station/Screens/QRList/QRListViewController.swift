@@ -21,6 +21,9 @@ class QRListViewController: UIViewController {
         tableViewSetup()
         searchSetup()
         vm.searchUpdatedCallback = { [weak self] in self?.tableView.reloadData() }
+        vm.updateAtIndexCallback = { [weak self] i in
+            self?.tableView.reloadRows(at: [i], with: .automatic)
+        }
     }
     
     private func tableViewSetup() {
@@ -55,5 +58,10 @@ extension QRListViewController: UITableViewDelegate {
         vc.qr = qr
         self.present(vc, animated: true)
         
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = vm.setFavoriteAction(forIndex: indexPath)
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }

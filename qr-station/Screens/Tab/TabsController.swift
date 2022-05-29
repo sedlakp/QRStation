@@ -50,6 +50,6 @@ extension TabsController: UITabBarControllerDelegate{
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("Selected Controller: \(viewController)")
+        print("Selected Controller: \(viewController.children.first)")
     }
 }

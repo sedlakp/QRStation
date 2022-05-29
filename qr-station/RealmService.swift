@@ -14,7 +14,7 @@ class RealmService {
     
     static let shared = RealmService()
     
-    let realm: Realm = try! Realm()
+    let realm: Realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 1))
     
     init() {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -44,6 +44,11 @@ class RealmService {
         }
     }
     
+    func updateFavorite(qr: QRCodeRLM ) {
+        try! realm.write {
+            qr.isFavorite.toggle()
+        }
+    }
     
     
 }

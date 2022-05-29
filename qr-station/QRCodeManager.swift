@@ -7,6 +7,8 @@
 
 import Foundation
 
+// This class is becoming useless because everything is done through realmservice anyways
+// maybe remove this layer later and use the realm service directly
 class QRCodeManager {
     
     static let shared = QRCodeManager()
@@ -34,6 +36,10 @@ class QRCodeManager {
     func delete(_ code: QRCodeRLM) {
         //_qrCodes.remove(code)
         realm.delete(code)
+    }
+    
+    func setFavoriteStatus(qr: QRCodeRLM) {
+        realm.updateFavorite(qr: qr)
     }
     
 }
