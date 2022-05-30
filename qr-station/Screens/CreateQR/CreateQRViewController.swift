@@ -10,7 +10,7 @@ import EFQRCode
 import Combine
 import BLTNBoard
 
-class CreateQRViewController: UIViewController {
+class CreateQRViewController: TabItemViewController {
     
     let qrManager = QRCodeManager.shared
     

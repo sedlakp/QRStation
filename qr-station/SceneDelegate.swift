@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let first = TabsController(nibName: "TabsController", bundle: nil)
+        let first = CustomTabBarViewController()//TabsController(nibName: "TabsController", bundle: nil)
         //let nc = UINavigationController(rootViewController: first)
         window.tintColor = forcedTintColor
         window.rootViewController = first

@@ -24,6 +24,13 @@
 		BB2F36D52842ECA6009FA328 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BB2F36D42842ECA6009FA328 /* Lottie */; };
 		BB2F36DA2842F1B7009FA328 /* Editing.json in Resources */ = {isa = PBXBuildFile; fileRef = BB2F36D92842F1B7009FA328 /* Editing.json */; };
 		BB2F36DC2842F9E2009FA328 /* Search.json in Resources */ = {isa = PBXBuildFile; fileRef = BB2F36DB2842F9E2009FA328 /* Search.json */; };
+		BB2F36E42844A8EC009FA328 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36E32844A8EC009FA328 /* CustomTabBar.swift */; };
+		BB2F36E62844A926009FA328 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36E52844A926009FA328 /* CustomTabBarViewController.swift */; };
+		BB2F36E82844A9D7009FA328 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36E72844A9D7009FA328 /* CustomTabItem.swift */; };
+		BB2F36EA2844AA62009FA328 /* HasCustomTabProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36E92844AA62009FA328 /* HasCustomTabProtocol.swift */; };
+		BB2F36EC2844ACB8009FA328 /* CustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36EB2844ACB8009FA328 /* CustomItemView.swift */; };
+		BB2F36EF2844B261009FA328 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB2F36EE2844B261009FA328 /* SnapKit */; };
+		BB2F36F32844BF3B009FA328 /* TabItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36F22844BF3B009FA328 /* TabItemViewController.swift */; };
 		BB455BD22840C2510043C9AB /* UIImgEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB455BD12840C2510043C9AB /* UIImgEx.swift */; };
 		BB455BD62840D7FF0043C9AB /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */; };
 		BB4A6ED9283F8F9700EB0106 /* QRScanner in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6ED8283F8F9700EB0106 /* QRScanner */; };
@@ -69,6 +76,12 @@
 		BB0F0FD5283B8A2600B3AB12 /* CellEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEx.swift; sourceTree = "<group>"; };
 		BB2F36D92842F1B7009FA328 /* Editing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Editing.json; sourceTree = "<group>"; };
 		BB2F36DB2842F9E2009FA328 /* Search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Search.json; sourceTree = "<group>"; };
+		BB2F36E32844A8EC009FA328 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		BB2F36E52844A926009FA328 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		BB2F36E72844A9D7009FA328 /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
+		BB2F36E92844AA62009FA328 /* HasCustomTabProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasCustomTabProtocol.swift; sourceTree = "<group>"; };
+		BB2F36EB2844ACB8009FA328 /* CustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItemView.swift; sourceTree = "<group>"; };
+		BB2F36F22844BF3B009FA328 /* TabItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemViewController.swift; sourceTree = "<group>"; };
 		BB455BD12840C2510043C9AB /* UIImgEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImgEx.swift; sourceTree = "<group>"; };
 		BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +111,7 @@
 				BB4A6ED9283F8F9700EB0106 /* QRScanner in Frameworks */,
 				BB4A6EEC283FC87F00EB0106 /* BLTNBoard in Frameworks */,
 				BB4A6EEF283FC9E800EB0106 /* Realm in Frameworks */,
+				BB2F36EF2844B261009FA328 /* SnapKit in Frameworks */,
 				BB4A6EF1283FC9E800EB0106 /* RealmSwift in Frameworks */,
 				BB4A6EE0283F96BF00EB0106 /* EFQRCode in Frameworks */,
 				BB2F36D52842ECA6009FA328 /* Lottie in Frameworks */,
@@ -133,6 +147,7 @@
 				BB4A6EE3283F982100EB0106 /* QRCode.swift */,
 				BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */,
 				BB54E9FE2842215800559FA9 /* Constants.swift */,
+				BB2F36E22844A8B2009FA328 /* CustomTabBar */,
 				BB2F36D62842EEAE009FA328 /* Resources */,
 				BB54EA0228422B5A00559FA9 /* EmptyStateView.swift */,
 				BB54EA0428422BB000559FA9 /* EmptyStateView.xib */,
@@ -219,6 +234,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BB2F36E22844A8B2009FA328 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BB2F36E52844A926009FA328 /* CustomTabBarViewController.swift */,
+				BB2F36E32844A8EC009FA328 /* CustomTabBar.swift */,
+				BB2F36EB2844ACB8009FA328 /* CustomItemView.swift */,
+				BB2F36E72844A9D7009FA328 /* CustomTabItem.swift */,
+				BB2F36E92844AA62009FA328 /* HasCustomTabProtocol.swift */,
+				BB2F36F22844BF3B009FA328 /* TabItemViewController.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
 		BB54E9F12841DE5E00559FA9 /* QRDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +297,7 @@
 				BB4A6EEE283FC9E800EB0106 /* Realm */,
 				BB4A6EF0283FC9E800EB0106 /* RealmSwift */,
 				BB2F36D42842ECA6009FA328 /* Lottie */,
+				BB2F36EE2844B261009FA328 /* SnapKit */,
 			);
 			productName = "qr-station";
 			productReference = BB0F0FA8283B64C100B3AB12 /* qr-station.app */;
@@ -304,6 +333,7 @@
 				BB4A6EEA283FC87F00EB0106 /* XCRemoteSwiftPackageReference "BulletinBoard" */,
 				BB4A6EED283FC9E800EB0106 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				BB2F36D32842ECA6009FA328 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				BB2F36ED2844B261009FA328 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = BB0F0FA9283B64C100B3AB12 /* Products */;
 			projectDirPath = "";
@@ -345,6 +375,7 @@
 				BB455BD22840C2510043C9AB /* UIImgEx.swift in Sources */,
 				BB54EA0328422B5A00559FA9 /* EmptyStateView.swift in Sources */,
 				BB0F0FC3283B6A0600B3AB12 /* TabsController.swift in Sources */,
+				BB2F36E42844A8EC009FA328 /* CustomTabBar.swift in Sources */,
 				BB54E9FB28420BD900559FA9 /* QRListVM.swift in Sources */,
 				BB0F0FC9283B719600B3AB12 /* QRListViewController.swift in Sources */,
 				BB4A6EE9283FBAA600EB0106 /* UITextFieldEx.swift in Sources */,
@@ -352,7 +383,11 @@
 				BB4A6EF3283FCA7F00EB0106 /* RealmService.swift in Sources */,
 				BB4A6EDC283F900900EB0106 /* ScannerViewController.swift in Sources */,
 				BB0F0FD3283B87C000B3AB12 /* QRCell.swift in Sources */,
+				BB2F36EC2844ACB8009FA328 /* CustomItemView.swift in Sources */,
+				BB2F36EA2844AA62009FA328 /* HasCustomTabProtocol.swift in Sources */,
+				BB2F36F32844BF3B009FA328 /* TabItemViewController.swift in Sources */,
 				BB4A6EE4283F982100EB0106 /* QRCode.swift in Sources */,
+				BB2F36E82844A9D7009FA328 /* CustomTabItem.swift in Sources */,
 				BB54E9FF2842215800559FA9 /* Constants.swift in Sources */,
 				BB0F0FD6283B8A2600B3AB12 /* CellEx.swift in Sources */,
 				BB0F0FCD283B71D800B3AB12 /* DashboardViewController.swift in Sources */,
@@ -361,6 +396,7 @@
 				BB54EA0128422A7200559FA9 /* TableViewEx.swift in Sources */,
 				BB54E9F72841EDC800559FA9 /* StringEx.swift in Sources */,
 				BB4A6EE6283F9A9400EB0106 /* ArrayEx.swift in Sources */,
+				BB2F36E62844A926009FA328 /* CustomTabBarViewController.swift in Sources */,
 				BB0F0FAC283B64C100B3AB12 /* AppDelegate.swift in Sources */,
 				BB4A6EE2283F980200EB0106 /* QRCodeManager.swift in Sources */,
 				BB0F0FAE283B64C100B3AB12 /* SceneDelegate.swift in Sources */,
@@ -587,6 +623,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		BB2F36ED2844B261009FA328 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		BB4A6ED7283F8F9700EB0106 /* XCRemoteSwiftPackageReference "QRScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mercari/QRScanner";
@@ -626,6 +670,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB2F36D32842ECA6009FA328 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		BB2F36EE2844B261009FA328 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2F36ED2844B261009FA328 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		BB4A6ED8283F8F9700EB0106 /* QRScanner */ = {
 			isa = XCSwiftPackageProductDependency;

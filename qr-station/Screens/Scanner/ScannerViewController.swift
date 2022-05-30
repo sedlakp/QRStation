@@ -10,7 +10,7 @@ import QRScanner
 import AVFoundation
 import BLTNBoard
 
-class ScannerViewController: UIViewController {
+class ScannerViewController: TabItemViewController {
     
     let qrManager = QRCodeManager.shared
     var qrScannerView: QRScannerView?

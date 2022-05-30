@@ -9,7 +9,9 @@ import UIKit
 import EFQRCode
 import BLTNBoard
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, HasCustomTabProtocol {
+    
+    var customTabItem: CustomTabItem?
     
     let qrManager = QRCodeManager.shared
     
@@ -61,7 +63,7 @@ class DashboardViewController: UIViewController {
 
     @objc private func scanBtnTapped() {
         let vc = ScannerViewController()
-        vc.hidesBottomBarWhenPushed = true
+        //vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -74,7 +76,7 @@ class DashboardViewController: UIViewController {
     
     @objc func createTapped() {
         let vc = CreateQRViewController()
-        vc.hidesBottomBarWhenPushed = true
+        //vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

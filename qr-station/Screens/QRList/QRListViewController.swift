@@ -7,7 +7,8 @@
 
 import UIKit
 
-class QRListViewController: UIViewController {
+class QRListViewController: UIViewController, HasCustomTabProtocol {
+    var customTabItem: CustomTabItem?
     
     let vm = QRListVM()
     
