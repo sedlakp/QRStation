@@ -34,6 +34,7 @@ class QRListViewController: UIViewController, HasCustomTabProtocol {
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorInset = .zero
+        tableView.contentInset.bottom = 70
     }
     
     private func searchSetup() {

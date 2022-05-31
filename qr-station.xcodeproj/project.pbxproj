@@ -11,8 +11,6 @@
 		BB0F0FAE283B64C100B3AB12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F0FAD283B64C100B3AB12 /* SceneDelegate.swift */; };
 		BB0F0FB5283B64C300B3AB12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0F0FB4283B64C300B3AB12 /* Assets.xcassets */; };
 		BB0F0FB8283B64C300B3AB12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0F0FB6283B64C300B3AB12 /* LaunchScreen.storyboard */; };
-		BB0F0FC3283B6A0600B3AB12 /* TabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F0FC1283B6A0600B3AB12 /* TabsController.swift */; };
-		BB0F0FC4283B6A0600B3AB12 /* TabsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0F0FC2283B6A0600B3AB12 /* TabsController.xib */; };
 		BB0F0FC9283B719600B3AB12 /* QRListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F0FC7283B719600B3AB12 /* QRListViewController.swift */; };
 		BB0F0FCA283B719600B3AB12 /* QRListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0F0FC8283B719600B3AB12 /* QRListViewController.xib */; };
 		BB0F0FCD283B71D800B3AB12 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F0FCB283B71D800B3AB12 /* DashboardViewController.swift */; };
@@ -64,8 +62,6 @@
 		BB0F0FB4283B64C300B3AB12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB0F0FB7283B64C300B3AB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB0F0FB9283B64C300B3AB12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB0F0FC1283B6A0600B3AB12 /* TabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsController.swift; sourceTree = "<group>"; };
-		BB0F0FC2283B6A0600B3AB12 /* TabsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabsController.xib; sourceTree = "<group>"; };
 		BB0F0FC7283B719600B3AB12 /* QRListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRListViewController.swift; sourceTree = "<group>"; };
 		BB0F0FC8283B719600B3AB12 /* QRListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRListViewController.xib; sourceTree = "<group>"; };
 		BB0F0FCB283B71D800B3AB12 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -144,13 +140,10 @@
 				BB0F0FAD283B64C100B3AB12 /* SceneDelegate.swift */,
 				BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */,
 				BB4A6EF2283FCA7F00EB0106 /* RealmService.swift */,
-				BB4A6EE3283F982100EB0106 /* QRCode.swift */,
-				BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */,
 				BB54E9FE2842215800559FA9 /* Constants.swift */,
-				BB2F36E22844A8B2009FA328 /* CustomTabBar */,
+				BB2F36F52845E58F009FA328 /* Models */,
 				BB2F36D62842EEAE009FA328 /* Resources */,
-				BB54EA0228422B5A00559FA9 /* EmptyStateView.swift */,
-				BB54EA0428422BB000559FA9 /* EmptyStateView.xib */,
+				BB2F36F42845E563009FA328 /* CustomViews */,
 				BB0F0FD7283B8A2C00B3AB12 /* Extensions */,
 				BB0F0FD8283B8B8900B3AB12 /* Cells */,
 				BB0F0FC0283B695B00B3AB12 /* Screens */,
@@ -173,23 +166,14 @@
 		BB0F0FC0283B695B00B3AB12 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BB2F36E22844A8B2009FA328 /* CustomTabBar */,
 				BBABA402283E65470056221D /* CreateQR */,
 				BBABA3FB283E64C40056221D /* Scanner */,
-				BB0F0FC5283B6A1100B3AB12 /* Tab */,
 				BB54E9F12841DE5E00559FA9 /* QRDetail */,
 				BB0F0FC6283B716F00B3AB12 /* QRList */,
 				BB0F0FBF283B694C00B3AB12 /* Dashboard */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		BB0F0FC5283B6A1100B3AB12 /* Tab */ = {
-			isa = PBXGroup;
-			children = (
-				BB0F0FC1283B6A0600B3AB12 /* TabsController.swift */,
-				BB0F0FC2283B6A0600B3AB12 /* TabsController.xib */,
-			);
-			path = Tab;
 			sourceTree = "<group>";
 		};
 		BB0F0FC6283B716F00B3AB12 /* QRList */ = {
@@ -245,6 +229,24 @@
 				BB2F36F22844BF3B009FA328 /* TabItemViewController.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		BB2F36F42845E563009FA328 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */,
+				BB54EA0228422B5A00559FA9 /* EmptyStateView.swift */,
+				BB54EA0428422BB000559FA9 /* EmptyStateView.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		BB2F36F52845E58F009FA328 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB4A6EE3283F982100EB0106 /* QRCode.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BB54E9F12841DE5E00559FA9 /* QRDetail */ = {
@@ -358,7 +360,6 @@
 				BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */,
 				BB0F0FCE283B71D800B3AB12 /* DashboardViewController.xib in Resources */,
 				BB54EA0528422BB000559FA9 /* EmptyStateView.xib in Resources */,
-				BB0F0FC4283B6A0600B3AB12 /* TabsController.xib in Resources */,
 				BB54E9F52841DE8100559FA9 /* QRDetailViewController.xib in Resources */,
 				BB0F0FB5283B64C300B3AB12 /* Assets.xcassets in Resources */,
 			);
@@ -374,7 +375,6 @@
 				BB54E9F42841DE8100559FA9 /* QRDetailViewController.swift in Sources */,
 				BB455BD22840C2510043C9AB /* UIImgEx.swift in Sources */,
 				BB54EA0328422B5A00559FA9 /* EmptyStateView.swift in Sources */,
-				BB0F0FC3283B6A0600B3AB12 /* TabsController.swift in Sources */,
 				BB2F36E42844A8EC009FA328 /* CustomTabBar.swift in Sources */,
 				BB54E9FB28420BD900559FA9 /* QRListVM.swift in Sources */,
 				BB0F0FC9283B719600B3AB12 /* QRListViewController.swift in Sources */,

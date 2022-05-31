@@ -8,7 +8,15 @@
 import UIKit
 import SnapKit
 
-/// This class uses fake tab bar, the official one is hidden. For that reason, first pushed controllers need to be a subclass of the TabItemViewController, where hiding and showing the fake tab bar is handled. Also, viewcontrollers cannot set the .hidesbottombarwhenpushed, becasuse this causes the real tab bar to show up, covering up the fake tabbar. This custom tab bar was made by adjusting https://github.com/jcholuj/CustomTabBarExample
+/** This class uses fake tab bar, the official one is hidden. For that reason, first pushed controllers need to be a subclass of the TabItemViewController, where hiding and showing the fake tab bar is handled. Also, viewcontrollers cannot set the .hidesbottombarwhenpushed, becasuse this causes the real tab bar to show up, covering up the fake tabbar. This custom tab bar was made by adjusting https://github.com/jcholuj/CustomTabBarExample , but RxSwift code was replaced with closures and tapgesturerecognizers because it is less code.
+ 
+    The custom tab bar has this structure:
+    1. CustomTabBarViewController - the top most layer, one of its views is the CustomTabBar
+    2. CustomTabBar - StackView containing multiple CustomTabItemViews
+    3. CustomTabItemView - A view containing CustomTabItem info
+ 
+    CustomTabItem - enum specifying the tab item
+ */
 class CustomTabBarViewController: UITabBarController {
 
     let customTabBar = CustomTabBar()
@@ -46,6 +54,7 @@ class CustomTabBarViewController: UITabBarController {
          //customTabBar.addShadow()
          
          selectedIndex = 0
+         // Create the controllers contained in the tab bar
          let controllers = CustomTabItem.allCases.map { $0.viewController }
          setViewControllers(controllers, animated: true)
      }
