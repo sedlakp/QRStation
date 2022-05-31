@@ -33,5 +33,14 @@ extension UITextField {
             self.rightViewMode = .always
         }
     }
+    
+    func setQRBorderless() {
+        borderStyle = .none
+        backgroundColor = .secondarySystemBackground
+        layer.cornerRadius = 6
+        clearButtonMode = .whileEditing
+        setPadding(16, nil)
+        font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+    }
 
 }

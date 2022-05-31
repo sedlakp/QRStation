@@ -29,6 +29,7 @@
 		BB2F36EC2844ACB8009FA328 /* CustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36EB2844ACB8009FA328 /* CustomItemView.swift */; };
 		BB2F36EF2844B261009FA328 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB2F36EE2844B261009FA328 /* SnapKit */; };
 		BB2F36F32844BF3B009FA328 /* TabItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36F22844BF3B009FA328 /* TabItemViewController.swift */; };
+		BB2F36F82845EBAA009FA328 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F36F62845EBAA009FA328 /* SheetViewController.swift */; };
 		BB455BD22840C2510043C9AB /* UIImgEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB455BD12840C2510043C9AB /* UIImgEx.swift */; };
 		BB455BD62840D7FF0043C9AB /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */; };
 		BB4A6ED9283F8F9700EB0106 /* QRScanner in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6ED8283F8F9700EB0106 /* QRScanner */; };
@@ -78,6 +79,7 @@
 		BB2F36E92844AA62009FA328 /* HasCustomTabProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasCustomTabProtocol.swift; sourceTree = "<group>"; };
 		BB2F36EB2844ACB8009FA328 /* CustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItemView.swift; sourceTree = "<group>"; };
 		BB2F36F22844BF3B009FA328 /* TabItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemViewController.swift; sourceTree = "<group>"; };
+		BB2F36F62845EBAA009FA328 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		BB455BD12840C2510043C9AB /* UIImgEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImgEx.swift; sourceTree = "<group>"; };
 		BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 		BB2F36F42845E563009FA328 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BB2F36F62845EBAA009FA328 /* SheetViewController.swift */,
 				BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */,
 				BB54EA0228422B5A00559FA9 /* EmptyStateView.swift */,
 				BB54EA0428422BB000559FA9 /* EmptyStateView.xib */,
@@ -373,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB54E9F42841DE8100559FA9 /* QRDetailViewController.swift in Sources */,
+				BB2F36F82845EBAA009FA328 /* SheetViewController.swift in Sources */,
 				BB455BD22840C2510043C9AB /* UIImgEx.swift in Sources */,
 				BB54EA0328422B5A00559FA9 /* EmptyStateView.swift in Sources */,
 				BB2F36E42844A8EC009FA328 /* CustomTabBar.swift in Sources */,

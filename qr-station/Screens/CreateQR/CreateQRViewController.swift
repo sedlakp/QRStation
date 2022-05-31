@@ -47,12 +47,7 @@ class CreateQRViewController: TabItemViewController {
         txtField.placeholder = "Type the QR Code content"
         createQR.setTitle("Create", for: .normal)
         createQR.isEnabled = false
-        txtField.borderStyle = .none
-        txtField.backgroundColor = .secondarySystemBackground
-        txtField.layer.cornerRadius = 6
-        txtField.clearButtonMode = .whileEditing
-        txtField.setPadding(16, nil)
-        txtField.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        txtField.setQRBorderless()
     }
     
     private func setupBindings() {
@@ -87,7 +82,30 @@ class CreateQRViewController: TabItemViewController {
         self.view.endEditing(true)
         let qr = QRCode(string: txtField.text ?? "", whereFrom: .created, appearedDate: Date.now)
         qrManager.add(qr)
-        showBulletin(from: qr)
+        //showBulletin(from: qr)
+        showSheet(with: qr)
+    }
+    
+    private func showSheet(with qr: QRCode) {
+        let vc = SheetViewController()
+        
+        vc.setup(qr: qr, title: "QR code created", actionText: "Done", altActionText: "Create another") { [weak self, weak vc] in
+            vc?.dismiss(animated: true)
+            self?.navigationController?.popViewController(animated: true)
+        } altAction: { [weak self, weak vc] in
+            self?.txtField.text = ""
+            self?.createQR.isEnabled = false
+            self?.qrImage.image = nil
+            vc?.dismiss(animated: true)
+        }
+
+        if let presentationController = vc.presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium()]
+            presentationController.prefersScrollingExpandsWhenScrolledToEdge = false
+        }
+        vc.isModalInPresentation = true
+        
+        self.present(vc, animated: true)
     }
     
     private func showBulletin(from qr: QRCode) {
