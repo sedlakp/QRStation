@@ -51,7 +51,10 @@ class CustomTabBarViewController: UITabBarController {
          tabBar.isHidden = true
          
          customTabBar.translatesAutoresizingMaskIntoConstraints = false
-         //customTabBar.addShadow()
+         customTabBar.layer.shadowColor = UIColor.black.cgColor
+         customTabBar.layer.shadowOffset = .zero
+         customTabBar.layer.shadowOpacity = 0.4
+         customTabBar.layer.shadowRadius = 7
          
          selectedIndex = 0
          // Create the controllers contained in the tab bar
