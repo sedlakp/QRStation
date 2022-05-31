@@ -47,6 +47,12 @@ class CreateQRViewController: TabItemViewController {
         txtField.placeholder = "Type the QR Code content"
         createQR.setTitle("Create", for: .normal)
         createQR.isEnabled = false
+        txtField.borderStyle = .none
+        txtField.backgroundColor = .secondarySystemBackground
+        txtField.layer.cornerRadius = 6
+        txtField.clearButtonMode = .whileEditing
+        txtField.setPadding(16, nil)
+        txtField.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
     }
     
     private func setupBindings() {
