@@ -27,10 +27,10 @@ class QRCodeManager {
         return Array(realm.realm.objects(QRCodeRLM.self))
     }
     
-    func add(_ code: QRCode) {
+    func add(_ code: QRCodeRLM) {
         //_qrCodes.append(code)
         
-        realm.add(code.toRLM())
+        realm.add(code)
     }
     
     func delete(_ code: QRCodeRLM) {
@@ -40,6 +40,10 @@ class QRCodeManager {
     
     func setFavoriteStatus(qr: QRCodeRLM) {
         realm.updateFavorite(qr: qr)
+    }
+    
+    func setQRName(for qr: QRCodeRLM, to text: String) {
+        realm.setQRName(for: qr, to: text)
     }
     
 }

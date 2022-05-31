@@ -6,11 +6,22 @@
 //
 
 import UIKit
+import Combine
 
 class QRDetailViewController: UIViewController {
     
+    let vm = QRDetailVM()
+    
+    var qrManager = QRCodeManager.shared
+    
     var qr: QRProtocol?
+    
+    var cancellables: Set<AnyCancellable> = []
+    
+    var onDismiss: (_ hasChange: Bool) -> () = {_ in}
+    var somethingChanged: Bool = false
 
+    @IBOutlet weak var textFld: UITextField!
     @IBOutlet weak var qrImageView: UIImageView!
     @IBOutlet weak var textLbl: PaddingLabel!
     
@@ -19,6 +30,14 @@ class QRDetailViewController: UIViewController {
     @IBOutlet weak var btnsBkgView: UIView!
     @IBOutlet weak var copyToClipboardBtn: UIButton!
     
+    deinit {
+        print("Detail deinitialized")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        onDismiss(somethingChanged)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +45,14 @@ class QRDetailViewController: UIViewController {
         shareBtn.addTarget(self, action: #selector(share), for: .touchUpInside)
         copyToClipboardBtn.addTarget(self, action: #selector(copyString), for: .touchUpInside)
         uiSetup()
+        
+        textFld.textPublisher
+            .debounce(for: .seconds(0.3), scheduler: RunLoop.main)
+            .sink { [weak self] text in
+                guard let qr = self?.qr as? QRCodeRLM else { return }
+                self?.qrManager.setQRName(for: qr, to: text)
+                self?.somethingChanged = true // on dismiss of this controller table reload will be triggered
+            }.store(in: &cancellables)
     }
     
     private func uiSetup() {
@@ -37,6 +64,9 @@ class QRDetailViewController: UIViewController {
         btnsBkgView.backgroundColor = .secondarySystemBackground
         btnsBkgView.layer.cornerRadius = 12
         qrImageView.layer.cornerRadius = 4
+        textFld.placeholder = "Add a name"
+        textFld.setQRBorderless()
+        textFld.delegate = vm
         configureWithQR()
     }
     
@@ -45,6 +75,7 @@ class QRDetailViewController: UIViewController {
         qrImageView.image = qr.qr
         textLbl.text = qr.string
         linkBtn.isHidden = !(qr.url?.isValidUrl() ?? false)
+        textFld.text = qr.name
     }
 
     
@@ -62,5 +93,6 @@ class QRDetailViewController: UIViewController {
     @objc private func copyString() {
         let pasteboard = UIPasteboard.general
         pasteboard.string = qr?.string
+        // TODO: Add some visual response
     }
 }

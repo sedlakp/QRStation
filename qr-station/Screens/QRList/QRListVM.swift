@@ -21,7 +21,10 @@ class QRListVM: NSObject {
         if filterText.isEmpty {
             return qrManager.qrCodes
         }
-        return qrManager.qrCodes.filter({$0.string.lowercased().contains(filterText.lowercased())})
+        return qrManager.qrCodes.filter({
+            $0.string.lowercased().contains(filterText.lowercased()) ||
+            $0.name.lowercased().contains(filterText.lowercased())
+        })
     }
     
     private func setEmptyScreen(in tableView: UITableView) {

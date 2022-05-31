@@ -41,6 +41,7 @@ extension UITextField {
         clearButtonMode = .whileEditing
         setPadding(16, nil)
         font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        returnKeyType = .done
     }
 
 }

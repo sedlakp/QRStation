@@ -58,6 +58,11 @@ extension QRListViewController: UITableViewDelegate {
         let qr = vm.qrCodes[indexPath.row]
         let vc = QRDetailViewController()
         vc.qr = qr
+        vc.onDismiss = { [weak tableView] hasChange in
+            if hasChange {
+                tableView?.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
         self.present(vc, animated: true)
         
     }

@@ -92,29 +92,34 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
             if !codes.isEmpty {
                 // get only the first one for now
                 let qr = QRCode(string: codes.first!, whereFrom: .image, appearedDate: Date.now)
-                showBulletin(from: qr)
+                showSheet(with: qr.toRLM())
             } else {
                 showNotFoundBulletin()
             }
         }
     }
     
-    private func showBulletin(from qr: QRCode) {
-        let item = BLTNPageItem(title: "Found QR code")
-        item.appearance.actionButtonColor = forcedTintColor
-        item.appearance.alternativeButtonTitleColor = forcedTintColor
-        item.image = qr.smallQr
-        item.descriptionText = qr.string
-        item.descriptionLabel?.textColor = .label
-        item.actionButtonTitle = "Save"
-        item.actionHandler = { [weak self] _ in
-            self?.qrManager.add(qr)
-            self?.bulletinManager.dismissBulletin()
-        }
+    
+    private func showSheet(with qr: QRCodeRLM) {
+        let vc = SheetViewController()
         
-        bulletinManager = BLTNItemManager(rootItem: item)
-        bulletinManager.backgroundColor = .secondarySystemBackground
-        bulletinManager.showBulletin(above: self)
+        vc.setup(qr: qr, title: "QR code scanned", actionText: "Save", altActionText: "Discard") { [weak self, weak vc] in
+            if let name = vc?.textFld.text?.trimmingCharacters(in: .whitespaces) {
+                qr.name = name
+            }
+            self?.qrManager.add(qr)
+            vc?.dismiss(animated: true)
+        } altAction: { [weak vc] in
+            vc?.dismiss(animated: true)
+        }
+
+        if let presentationController = vc.presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium()]
+            presentationController.prefersScrollingExpandsWhenScrolledToEdge = false
+        }
+        vc.isModalInPresentation = true
+        
+        self.present(vc, animated: true)
     }
     
     private func showNotFoundBulletin() {

@@ -16,6 +16,7 @@ protocol QRProtocol {
     var appearedDate: Date { get }
     var whereFrom: QRCode.WhereFrom { get }
     var isFavorite: Bool { get set }
+    var name: String { get set }
 }
 
 extension QRProtocol {
@@ -89,6 +90,7 @@ struct QRCode: Equatable, QRProtocol {
     let whereFrom: WhereFrom
     let appearedDate: Date
     var isFavorite: Bool = false
+    var name: String = ""
     
     // var numberScanned
     
@@ -110,6 +112,7 @@ class QRCodeRLM: Object, QRProtocol, ObjectKeyIdentifiable {
     @Persisted var whereFromStr: String
     @Persisted var appearedDate: Date
     @Persisted var isFavorite: Bool = false
+    @Persisted var name: String = ""
     
     var whereFrom: QRCode.WhereFrom {
         return QRCode.WhereFrom(rawValue: whereFromStr) ?? .unknown

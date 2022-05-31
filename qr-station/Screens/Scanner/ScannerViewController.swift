@@ -8,17 +8,11 @@
 import UIKit
 import QRScanner
 import AVFoundation
-import BLTNBoard
 
 class ScannerViewController: TabItemViewController {
     
     let qrManager = QRCodeManager.shared
     var qrScannerView: QRScannerView?
-    
-    lazy var bulletinManager: BLTNItemManager = {
-        let rootItem = BLTNPageItem(title: "QR found")
-        return BLTNItemManager(rootItem: rootItem)
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,25 +58,28 @@ class ScannerViewController: TabItemViewController {
         }
     }
     
-    private func showBulletin(from qr: QRCode) {
-        let item = BLTNPageItem(title: "Found QR code")
-        item.image = qr.smallQr
-        item.descriptionText = qr.string
-        item.descriptionLabel?.textColor = .label
-        item.actionButtonTitle = "Save"
-        item.appearance.actionButtonColor = forcedTintColor
-        item.appearance.alternativeButtonTitleColor = forcedTintColor
-        item.actionHandler = { [weak self] _ in
-            self?.qrManager.add(qr)
-            self?.bulletinManager.dismissBulletin()
-        }
-        item.dismissalHandler = { [weak self] _ in
-            self?.qrScannerView?.rescan()
-        }
+    private func showSheet(with qr: QRCodeRLM) {
+        let vc = SheetViewController()
         
-        bulletinManager = BLTNItemManager(rootItem: item)
-        bulletinManager.backgroundColor = .secondarySystemBackground
-        bulletinManager.showBulletin(above: self)
+        vc.setup(qr: qr, title: "QR code scanned", actionText: "Save", altActionText: "Discard") { [weak self, weak vc] in
+            if let name = vc?.textFld.text?.trimmingCharacters(in: .whitespaces) {
+                qr.name = name
+            }
+            self?.qrManager.add(qr)
+            self?.qrScannerView?.rescan()
+            vc?.dismiss(animated: true)
+        } altAction: { [weak self, weak vc] in
+            self?.qrScannerView?.rescan()
+            vc?.dismiss(animated: true)
+        }
+
+        if let presentationController = vc.presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium()]
+            presentationController.prefersScrollingExpandsWhenScrolledToEdge = false
+        }
+        vc.isModalInPresentation = true
+        
+        self.present(vc, animated: true)
     }
 
 }
@@ -95,6 +92,6 @@ extension ScannerViewController: QRScannerViewDelegate {
 
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
         let qr = QRCode(string: code, whereFrom: .camera, appearedDate: Date.now)
-        showBulletin(from: qr)
+        showSheet(with: qr.toRLM())
     }
 }

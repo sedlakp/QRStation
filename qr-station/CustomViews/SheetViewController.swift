@@ -99,7 +99,7 @@ class SheetViewController: UIViewController {
     
     
     
-    func setup(qr: QRCode, title: String, actionText: String, altActionText: String, action: @escaping () -> () = {}, altAction: @escaping () -> () = {} ) {
+    func setup(qr: QRProtocol, title: String, actionText: String, altActionText: String, action: @escaping () -> () = {}, altAction: @escaping () -> () = {} ) {
         self.action = action
         self.altAction = altAction
         
