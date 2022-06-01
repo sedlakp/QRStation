@@ -11,7 +11,7 @@ import AVFoundation
 
 class ScannerViewController: TabItemViewController {
     
-    let qrManager = QRCodeManager.shared
+    let realm = RealmService.shared
     var qrScannerView: QRScannerView?
 
     override func viewDidLoad() {
@@ -65,7 +65,7 @@ class ScannerViewController: TabItemViewController {
             if let name = vc?.textFld.text?.trimmingCharacters(in: .whitespaces) {
                 qr.name = name
             }
-            self?.qrManager.add(qr)
+            self?.realm.add(qr)
             self?.qrScannerView?.rescan()
             vc?.dismiss(animated: true)
         } altAction: { [weak self, weak vc] in

@@ -13,7 +13,7 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
     
     var customTabItem: CustomTabItem?
     
-    let qrManager = QRCodeManager.shared
+    private let realm = RealmService.shared
     
     lazy var bulletinManager: BLTNItemManager = {
         let rootItem = BLTNPageItem(title: "QR found")
@@ -107,7 +107,7 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
             if let name = vc?.textFld.text?.trimmingCharacters(in: .whitespaces) {
                 qr.name = name
             }
-            self?.qrManager.add(qr)
+            self?.realm.add(qr)
             vc?.dismiss(animated: true)
         } altAction: { [weak vc] in
             vc?.dismiss(animated: true)

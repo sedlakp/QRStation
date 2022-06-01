@@ -12,7 +12,7 @@ class QRDetailViewController: UIViewController {
     
     let vm = QRDetailVM()
     
-    var qrManager = QRCodeManager.shared
+    var realm = RealmService.shared
     
     var qr: QRProtocol?
     
@@ -50,7 +50,7 @@ class QRDetailViewController: UIViewController {
             .debounce(for: .seconds(0.3), scheduler: RunLoop.main)
             .sink { [weak self] text in
                 guard let qr = self?.qr as? QRCodeRLM else { return }
-                self?.qrManager.setQRName(for: qr, to: text)
+                self?.realm.setQRName(for: qr, to: text)
                 self?.somethingChanged = true // on dismiss of this controller table reload will be triggered
             }.store(in: &cancellables)
     }

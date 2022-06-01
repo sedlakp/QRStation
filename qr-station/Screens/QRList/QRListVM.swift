@@ -7,24 +7,19 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class QRListVM: NSObject {
     
-    private let qrManager = QRCodeManager.shared
+    private let realm = RealmService.shared
     
     private var filterText: String = ""
     
     var searchUpdatedCallback: () -> () = {}
     var updateAtIndexCallback: (IndexPath) -> () = {_ in}
     
-    var qrCodes: [QRCodeRLM] {
-        if filterText.isEmpty {
-            return qrManager.qrCodes
-        }
-        return qrManager.qrCodes.filter({
-            $0.string.lowercased().contains(filterText.lowercased()) ||
-            $0.name.lowercased().contains(filterText.lowercased())
-        })
+    var qrCodes: RealmSwift.Results<QRCodeRLM> {
+        realm.getCodes(searchedText: filterText)
     }
     
     private func setEmptyScreen(in tableView: UITableView) {
@@ -36,7 +31,7 @@ class QRListVM: NSObject {
     }
     
     func setQRFavoriteStatus(qr: QRCodeRLM) {
-        qrManager.setFavoriteStatus(qr: qr)
+        realm.updateFavorite(qr: qr)
     }
     
     func setFavoriteAction(forIndex index: IndexPath) -> UIContextualAction {
@@ -77,7 +72,7 @@ extension QRListVM: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             // TODO: During filtering, be careful about what gets deleted
-            qrManager.delete(qrCodes[indexPath.row])
+            realm.delete(qrCodes[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
 
         }

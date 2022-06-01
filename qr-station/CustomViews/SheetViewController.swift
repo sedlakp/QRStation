@@ -66,6 +66,10 @@ class SheetViewController: UIViewController {
             $0.height.equalTo(28)
         }
         
+        descriptionLbl.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(28)
+        }
+        
         actionBtn.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(28)
             $0.height.equalTo(42)
@@ -81,6 +85,7 @@ class SheetViewController: UIViewController {
         
         titleLbl.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
         descriptionLbl.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        descriptionLbl.numberOfLines = 3
         
         contentStack.axis = .vertical
         contentStack.alignment = .center

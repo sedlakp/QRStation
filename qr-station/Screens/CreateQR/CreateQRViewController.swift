@@ -11,7 +11,7 @@ import Combine
 
 class CreateQRViewController: TabItemViewController {
     
-    let qrManager = QRCodeManager.shared
+    let realm = RealmService.shared
     
     var subscriptions: Set<AnyCancellable> = []
 
@@ -78,7 +78,7 @@ class CreateQRViewController: TabItemViewController {
         self.view.endEditing(true)
         let qr = QRCode(string: txtField.text ?? "", whereFrom: .created, appearedDate: Date.now)
         let qrRlm = qr.toRLM()
-        qrManager.add(qrRlm)
+        realm.add(qrRlm)
         //showBulletin(from: qr)
         showSheet(with: qrRlm)
     }
@@ -89,7 +89,7 @@ class CreateQRViewController: TabItemViewController {
         vc.setup(qr: qr, title: "QR code created", actionText: "Done", altActionText: "Create another") { [weak self, weak vc] in
             vc?.dismiss(animated: true)
             if let name = vc?.textFld.text?.trimmingCharacters(in: .whitespaces) {
-                self?.qrManager.setQRName(for: qr, to: name)
+                self?.realm.setQRName(for: qr, to: name)
             }
             self?.navigationController?.popViewController(animated: true)
         } altAction: { [weak self, weak vc] in

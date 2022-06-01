@@ -37,7 +37,6 @@
 		BB4A6EDC283F900900EB0106 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */; };
 		BB4A6EDD283F900900EB0106 /* ScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4A6EDB283F900900EB0106 /* ScannerViewController.xib */; };
 		BB4A6EE0283F96BF00EB0106 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A6EDF283F96BF00EB0106 /* EFQRCode */; };
-		BB4A6EE2283F980200EB0106 /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */; };
 		BB4A6EE4283F982100EB0106 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE3283F982100EB0106 /* QRCode.swift */; };
 		BB4A6EE6283F9A9400EB0106 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */; };
 		BB4A6EE9283FBAA600EB0106 /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A6EE8283FBAA600EB0106 /* UITextFieldEx.swift */; };
@@ -86,7 +85,6 @@
 		BB455BD52840D7FF0043C9AB /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		BB4A6EDA283F900900EB0106 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		BB4A6EDB283F900900EB0106 /* ScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerViewController.xib; sourceTree = "<group>"; };
-		BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
 		BB4A6EE3283F982100EB0106 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		BB4A6EE5283F9A9400EB0106 /* ArrayEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
 		BB4A6EE8283FBAA600EB0106 /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			children = (
 				BB0F0FAB283B64C100B3AB12 /* AppDelegate.swift */,
 				BB0F0FAD283B64C100B3AB12 /* SceneDelegate.swift */,
-				BB4A6EE1283F980200EB0106 /* QRCodeManager.swift */,
 				BB4A6EF2283FCA7F00EB0106 /* RealmService.swift */,
 				BB54E9FE2842215800559FA9 /* Constants.swift */,
 				BB2F36F52845E58F009FA328 /* Models */,
@@ -406,7 +403,6 @@
 				BB4A6EE6283F9A9400EB0106 /* ArrayEx.swift in Sources */,
 				BB2F36E62844A926009FA328 /* CustomTabBarViewController.swift in Sources */,
 				BB0F0FAC283B64C100B3AB12 /* AppDelegate.swift in Sources */,
-				BB4A6EE2283F980200EB0106 /* QRCodeManager.swift in Sources */,
 				BB0F0FAE283B64C100B3AB12 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
