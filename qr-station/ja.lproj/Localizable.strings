@@ -26,6 +26,7 @@
 "List.Title" = "QRコード";
 "List.Favorite" = "お気にいり";
 "List.Delete" = "削除";
+"List.Empty" = "QRコードが一つもない";
 "List.Search" = "QRコードを探す";
 "List.Search.Empty" = "QRコードを見つかりませんでした";
 "Detail.AddName" = "QRコードのニックネーム";

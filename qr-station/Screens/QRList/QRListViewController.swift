@@ -13,6 +13,13 @@ class QRListViewController: UIViewController, HasCustomTabProtocol {
     let vm = QRListVM()
     
     let search = UISearchController(searchResultsController: nil)
+    
+    lazy var leftBarButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem(image: UIImage.init(systemName: "star.square.fill"), style: .plain, target: self, action: #selector(showOnlyFavoritesTapped))
+        btn.isSelected = false
+        btn.tintColor = .systemGray
+        return btn
+    }()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,9 +29,11 @@ class QRListViewController: UIViewController, HasCustomTabProtocol {
         tableViewSetup()
         searchSetup()
         vm.searchUpdatedCallback = { [weak self] in self?.tableView.reloadData() }
-        vm.updateAtIndexCallback = { [weak self] i in
-            self?.tableView.reloadRows(at: [i], with: .automatic)
+        vm.updateAtIndexCallback = { [weak self] _ in
+            self?.tableView.reloadData()
         }
+        navigationItem.leftBarButtonItem = leftBarButton
+        
     }
     
     private func tableViewSetup() {
@@ -47,6 +56,11 @@ class QRListViewController: UIViewController, HasCustomTabProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+    }
+    
+    @objc private func showOnlyFavoritesTapped() {
+        leftBarButton.tintColor = leftBarButton.tintColor == .systemYellow ? .systemGray : .systemYellow
+        vm.justFavoritesActive(leftBarButton.tintColor == .systemYellow)
     }
 
 }

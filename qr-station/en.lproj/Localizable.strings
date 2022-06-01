@@ -26,6 +26,7 @@
 "List.Title" = "QR Codes";
 "List.Favorite" = "Favorite";
 "List.Delete" = "Delete";
+"List.Empty" = "You have not scanned or created any QR codes yet.";
 "List.Search" = "Search for a QR code";
 "List.Search.Empty" = "No QR codes found";
 "Detail.AddName" = "Add a name";

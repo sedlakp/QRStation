@@ -18,16 +18,23 @@ class QRListVM: NSObject {
     var searchUpdatedCallback: () -> () = {}
     var updateAtIndexCallback: (IndexPath) -> () = {_ in}
     
+    var onlyFavorites: Bool = false
+    
     var qrCodes: RealmSwift.Results<QRCodeRLM> {
-        realm.getCodes(searchedText: filterText)
+        if onlyFavorites {
+            return realm.getCodes(searchedText: filterText).where { i in
+                i.isFavorite == true
+            }
+        } else {
+            return realm.getCodes(searchedText: filterText)
+        }
     }
     
     private func setEmptyScreen(in tableView: UITableView) {
         if !filterText.isEmpty {
             qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Search", and: "List.Search.Empty".localize()) : tableView.removeEmptyScreen()
         } else {
-            #warning("STRING not localized")
-            qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Editing", and: "You have not scanned or created any QR codes yet.") : tableView.removeEmptyScreen()
+            qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Editing", and: "List.Empty".localize()) : tableView.removeEmptyScreen()
         }
     }
     
@@ -45,6 +52,11 @@ class QRListVM: NSObject {
             }
         action.backgroundColor = .systemYellow
         return action
+    }
+    
+    func justFavoritesActive(_ bool: Bool) {
+        onlyFavorites = bool
+        searchUpdatedCallback()
     }
     
 }
