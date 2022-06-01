@@ -17,13 +17,11 @@ class RealmService {
     let realm: Realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 2))
     
     init() {
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!) //shows realm file location
     }
     
-    var qrCodes: RealmSwift.Results<QRCodeRLM> {
-        return realm.objects(QRCodeRLM.self).sorted(by: \.appearedDate, ascending: false)
-    }
     
+    // MARK: - QRCodeRLM related
     func getCodes(searchedText: String) -> Results<QRCodeRLM> {
         if searchedText.isEmpty {
             // return everything
@@ -40,6 +38,19 @@ class RealmService {
         }
     }
     
+    func updateFavorite(qr: QRCodeRLM ) {
+        try! realm.write {
+            qr.isFavorite.toggle()
+        }
+    }
+    
+    func setQRName(for qr: QRCodeRLM, to text: String) {
+        try! realm.write {
+            qr.name = text
+        }
+    }
+    
+    // MARK: - General
     func add(_ object: Object) {
         try! realm.write {
             realm.add(object, update: .all)
@@ -63,18 +74,5 @@ class RealmService {
             realm.deleteAll()
         }
     }
-    
-    func updateFavorite(qr: QRCodeRLM ) {
-        try! realm.write {
-            qr.isFavorite.toggle()
-        }
-    }
-    
-    func setQRName(for qr: QRCodeRLM, to text: String) {
-        try! realm.write {
-            qr.name = text
-        }
-    }
-    
     
 }
