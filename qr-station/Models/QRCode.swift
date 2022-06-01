@@ -63,9 +63,9 @@ struct QRCode: Equatable, QRProtocol {
         
         var detail: String {
             switch self {
-            case .camera: return "Camera scan"
-            case .image: return "Image scan"
-            case .created: return "Created"
+            case .camera: return "QRCode.WhereFrom.CameraScan".localize()
+            case .image: return "QRCode.WhereFrom.ImageScan".localize()
+            case .created: return "QRCode.WhereFrom.Created".localize()
             case .unknown: return "???"
             }
         }

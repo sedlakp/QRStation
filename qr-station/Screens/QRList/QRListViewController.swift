@@ -18,7 +18,7 @@ class QRListViewController: UIViewController, HasCustomTabProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "QR Codes"
+        navigationItem.title = "List.Title".localize()
         tableViewSetup()
         searchSetup()
         vm.searchUpdatedCallback = { [weak self] in self?.tableView.reloadData() }
@@ -40,7 +40,7 @@ class QRListViewController: UIViewController, HasCustomTabProtocol {
     private func searchSetup() {
         search.searchResultsUpdater = vm
         search.obscuresBackgroundDuringPresentation = false
-        search.searchBar.placeholder = "Search for a QR code content"
+        search.searchBar.placeholder = "List.Search".localize()
         navigationItem.searchController = search
         
     }

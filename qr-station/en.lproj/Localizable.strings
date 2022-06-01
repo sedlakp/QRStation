@@ -1,0 +1,36 @@
+// Localizable.strings
+//   qr-station
+// 
+//   Created by Petr Sedlák on 01.06.2022.
+"Tab.Dashboard" = "Dashboard";
+"Tab.List" = "List";
+"Dashboard.Title" = "QR Station";
+"Dashboard.Scan" = "Scan a QR code";
+"Dashboard.Scan.Camera" = "From camera";
+"Dashboard.Scan.Image" = "From image";
+"Dashboard.Create" = "Create a QR code";
+"ImageScan.NoQR" = "No QR code";
+"ImageScan.NoQR.message" = "No QR code was found in the selected image";
+"ImageScan.NoQR.Ok" = "OK";
+"CameraScan.Scanned" = "QR code scanned";
+"CameraScan.CodeName" = "QR code name (optional)";
+"CameraScan.Save" = "Save";
+"CameraScan.Discard" = "Discard";
+"Create.Title" = "Create a QR code";
+"Create.Or" = "or";
+"Create.Create" = "Create";
+"Create.Created" = "QR code created";
+"Create.CodeName" = "QR code name (optional)";
+"Create.Done" = "Done";
+"Create.CreateAnother" = "Create another";
+"List.Title" = "QR Codes";
+"List.Favorite" = "Favorite";
+"List.Delete" = "Delete";
+"List.Search" = "Search for a QR code";
+"List.Search.Empty" = "No QR codes found";
+"Detail.AddName" = "Add a name";
+"QRCode.WhereFrom.Created" = "Created";
+"QRCode.WhereFrom.CameraScan" = "Camera scan";
+"QRCode.WhereFrom.ImageScan" = "Image scan";
+"List.Unfavorite" = "Unfavorite";
+"Create.Placeholder" = "Type the QR Code content";

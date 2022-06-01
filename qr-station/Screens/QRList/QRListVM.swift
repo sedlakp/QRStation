@@ -24,8 +24,9 @@ class QRListVM: NSObject {
     
     private func setEmptyScreen(in tableView: UITableView) {
         if !filterText.isEmpty {
-            qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Search", and: "No QR codes found.") : tableView.removeEmptyScreen()
+            qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Search", and: "List.Search.Empty".localize()) : tableView.removeEmptyScreen()
         } else {
+            #warning("STRING not localized")
             qrCodes.isEmpty ? tableView.setEmptyScreen(with: "Editing", and: "You have not scanned or created any QR codes yet.") : tableView.removeEmptyScreen()
         }
     }
@@ -36,7 +37,7 @@ class QRListVM: NSObject {
     
     func setFavoriteAction(forIndex index: IndexPath) -> UIContextualAction {
         let qr = qrCodes[index.row]
-        let action = UIContextualAction(style: .normal, title: qr.isFavorite ? "Unfavorite": "Favorite")
+        let action = UIContextualAction(style: .normal, title: qr.isFavorite ? "List.Unfavorite".localize(): "List.Favorite".localize())
             { [weak self] (action, view, completionHandler) in
                 self?.setQRFavoriteStatus(qr:qr)
                 self?.updateAtIndexCallback(index)

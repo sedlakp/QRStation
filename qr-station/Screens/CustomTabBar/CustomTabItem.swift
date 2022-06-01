@@ -48,6 +48,12 @@ extension CustomTabItem {
     }
     
     var name: String {
-        return self.rawValue.capitalized
+        //return self.rawValue.capitalized
+        switch self {
+        case .dashboard:
+            return "Tab.Dashboard".localize()
+        case .list:
+            return "Tab.List".localize()
+        }
     }
 }

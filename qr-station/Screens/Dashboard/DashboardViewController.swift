@@ -16,7 +16,7 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
     private let realm = RealmService.shared
     
     lazy var bulletinManager: BLTNItemManager = {
-        let rootItem = BLTNPageItem(title: "QR found")
+        let rootItem = BLTNPageItem(title: "")
         return BLTNItemManager(rootItem: rootItem)
     }()
     
@@ -34,7 +34,7 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "QR Station"
+        navigationItem.title = "Dashboard.Title".localize()
         
         setupUI()
         
@@ -45,13 +45,13 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
     }
     
     private func setupUI() {
-        scanTitleLbl.text = "Scan a QR code"
+        scanTitleLbl.text = "Dashboard.Scan".localize()
         scanTitleLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        qrScanLbl.text = "From camera"
+        qrScanLbl.text = "Dashboard.Scan.Camera".localize()
         qrScanLbl.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
-        qrImageScanLbl.text = "From image"
+        qrImageScanLbl.text = "Dashboard.Scan.Image".localize()
         qrImageScanLbl.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
-        qrCreateLbl.text = "Create a QR code"
+        qrCreateLbl.text = "Dashboard.Scan".localize()
         qrCreateLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         
         scanBkgView.layer.cornerRadius = 12
@@ -103,7 +103,7 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
     private func showSheet(with qr: QRCodeRLM) {
         let vc = SheetViewController()
         
-        vc.setup(qr: qr, title: "QR code scanned", actionText: "Save", altActionText: "Discard") { [weak self, weak vc] in
+        vc.setup(qr: qr, title: "CameraScan.Scanned".localize(), actionText: "CameraScan.Save".localize(), altActionText: "CameraScan.Discard".localize()) { [weak self, weak vc] in
             if let name = vc?.textFld.text?.trimmingCharacters(in: .whitespaces) {
                 qr.name = name
             }
@@ -123,13 +123,13 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
     }
     
     private func showNotFoundBulletin() {
-        let item = BLTNPageItem(title: "No QR code")
+        let item = BLTNPageItem(title: "ImageScan.NoQR".localize())
         item.appearance.actionButtonColor = forcedTintColor
         item.appearance.alternativeButtonTitleColor = forcedTintColor
         //item.image = UIImage(systemName: "exclamationmark.triangle")
-        item.descriptionText = "No QR code was found in the selected image"
+        item.descriptionText = "ImageScan.NoQR.message".localize()
         item.descriptionLabel?.textColor = .label
-        item.actionButtonTitle = "OK"
+        item.actionButtonTitle = "ImageScan.NoQR.Ok".localize()
         item.actionHandler = { [weak self] _ in
             self?.bulletinManager.dismissBulletin()
         }

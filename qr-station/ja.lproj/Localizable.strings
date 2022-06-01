@@ -1,0 +1,36 @@
+// Localizable.strings
+//   qr-station
+// 
+//   Created by Petr Sedlák on 01.06.2022.
+"Tab.Dashboard" = "ステーション";
+"Tab.List" = "リスト";
+"Dashboard.Title" = "QRステーション";
+"Dashboard.Scan" = "QRコードをスキャンする";
+"Dashboard.Scan.Camera" = "カメラ";
+"Dashboard.Scan.Image" = "写真";
+"Dashboard.Create" = "QRコードを作る";
+"ImageScan.NoQR" = "QRコード不明";
+"ImageScan.NoQR.message" = "写真からQRコードを見つかりませんでした。";
+"ImageScan.NoQR.Ok" = "了解";
+"CameraScan.Scanned" = "QRコード見つかった";
+"CameraScan.CodeName" = "QRコードのニックネーム（任意）";
+"CameraScan.Save" = "保存する";
+"CameraScan.Discard" = "捨てる";
+"Create.Title" = "QRコードを作る";
+"Create.Or" = "または";
+"Create.Create" = "作る";
+"Create.Created" = "QRコード完全";
+"Create.CodeName" = "QRコードのニックネーム（任意）";
+"Create.Done" = "完了";
+"Create.CreateAnother" = "次のを作る";
+"List.Title" = "QRコード";
+"List.Favorite" = "お気にいり";
+"List.Delete" = "削除";
+"List.Search" = "QRコードを探す";
+"List.Search.Empty" = "QRコードを見つかりませんでした";
+"Detail.AddName" = "QRコードのニックネームを追加する";
+"QRCode.WhereFrom.Created" = "作った";
+"QRCode.WhereFrom.CameraScan" = "カメラから";
+"QRCode.WhereFrom.ImageScan" = "イメージから";
+"List.Unfavorite" = "お気に入りを消す";
+"Create.Placeholder" = "QRコードの内容";

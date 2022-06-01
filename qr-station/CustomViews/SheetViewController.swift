@@ -95,7 +95,7 @@ class SheetViewController: UIViewController {
         
         textFld.setQRBorderless()
         textFld.backgroundColor = .systemBackground
-        textFld.placeholder = "QR code name (optional)"
+        textFld.placeholder = "Create.CodeName".localize()
         
         actionBtn.configuration = .filled()
         actionBtn.tintColor = forcedTintColor

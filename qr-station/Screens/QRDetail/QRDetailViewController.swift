@@ -64,7 +64,7 @@ class QRDetailViewController: UIViewController {
         btnsBkgView.backgroundColor = .secondarySystemBackground
         btnsBkgView.layer.cornerRadius = 12
         qrImageView.layer.cornerRadius = 4
-        textFld.placeholder = "Add a name"
+        textFld.placeholder = "Detail.AddName".localize()
         textFld.setQRBorderless()
         textFld.delegate = vm
         configureWithQR()

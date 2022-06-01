@@ -27,7 +27,7 @@ class CreateQRViewController: TabItemViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Create QR Code"
+        navigationItem.title = "Create.Title".localize()
         createQR.addTarget(self, action: #selector(createQRCode), for: .touchUpInside)
         pasteBtn.addTarget(self, action: #selector(pasteTapped), for: .touchUpInside)
         setupUI()
@@ -35,14 +35,14 @@ class CreateQRViewController: TabItemViewController {
     }
     
     private func setupUI() {
-        orLbl.text = "or"
+        orLbl.text = "Create.Or".localize()
         qrImage.backgroundColor = .white
         qrImage.layer.cornerRadius = 4
         
-        createQR.setTitle("Create", for: .normal)
+        createQR.setTitle("Create.Create".localize(), for: .normal)
         createQR.isEnabled = false
         
-        txtField.placeholder = "Type the QR Code content"
+        txtField.placeholder = "Create.Placeholder".localize()
         txtField.setQRBorderless()
     }
     
@@ -86,7 +86,7 @@ class CreateQRViewController: TabItemViewController {
     private func showSheet(with qr: QRCodeRLM) {
         let vc = SheetViewController()
         
-        vc.setup(qr: qr, title: "QR code created", actionText: "Done", altActionText: "Create another") { [weak self, weak vc] in
+        vc.setup(qr: qr, title: "Create.Created".localize(), actionText: "Create.Done".localize(), altActionText: "Create.CreateAnother".localize()) { [weak self, weak vc] in
             vc?.dismiss(animated: true)
             if let name = vc?.textFld.text?.trimmingCharacters(in: .whitespaces) {
                 self?.realm.setQRName(for: qr, to: name)

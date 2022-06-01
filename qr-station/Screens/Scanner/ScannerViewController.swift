@@ -61,7 +61,7 @@ class ScannerViewController: TabItemViewController {
     private func showSheet(with qr: QRCodeRLM) {
         let vc = SheetViewController()
         
-        vc.setup(qr: qr, title: "QR code scanned", actionText: "Save", altActionText: "Discard") { [weak self, weak vc] in
+        vc.setup(qr: qr, title: "CameraScan.Scanned".localize(), actionText: "CameraScan.Save".localize(), altActionText: "CameraScan.Discard".localize()) { [weak self, weak vc] in
             if let name = vc?.textFld.text?.trimmingCharacters(in: .whitespaces) {
                 qr.name = name
             }

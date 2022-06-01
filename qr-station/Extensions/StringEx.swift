@@ -15,6 +15,10 @@ extension String {
         }
         return false
     }
+    
+    func localize() -> Self {
+        return NSLocalizedString(self, comment: "")
+    }
 }
 
 extension URL {
