@@ -28,7 +28,7 @@
 "List.Delete" = "削除";
 "List.Search" = "QRコードを探す";
 "List.Search.Empty" = "QRコードを見つかりませんでした";
-"Detail.AddName" = "QRコードのニックネームを追加する";
+"Detail.AddName" = "QRコードのニックネーム";
 "QRCode.WhereFrom.Created" = "作った";
 "QRCode.WhereFrom.CameraScan" = "カメラから";
 "QRCode.WhereFrom.ImageScan" = "イメージから";
