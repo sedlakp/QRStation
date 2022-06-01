@@ -20,30 +20,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-yQ-pTW">
-                    <rect key="frame" x="70" y="205" width="274" height="324.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-yQ-pTW">
+                    <rect key="frame" x="70" y="163" width="274" height="294.5"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP6-kP-hlO">
+                            <rect key="frame" x="0.0" y="0.0" width="274" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utm-rv-DRj" customClass="AnimationView" customModule="Lottie">
-                            <rect key="frame" x="0.0" y="0.0" width="274" height="274"/>
+                            <rect key="frame" x="0.0" y="20.5" width="274" height="274"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="utm-rv-DRj" secondAttribute="height" multiplier="1:1" id="eeZ-HG-V0l"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP6-kP-hlO">
-                            <rect key="frame" x="0.0" y="304" width="274" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="utm-rv-DRj" firstAttribute="top" secondItem="eHv-yQ-pTW" secondAttribute="top" id="CxH-M7-RIC"/>
-                        <constraint firstItem="hP6-kP-hlO" firstAttribute="leading" secondItem="eHv-yQ-pTW" secondAttribute="leading" id="FjB-rX-cuH"/>
+                        <constraint firstItem="hP6-kP-hlO" firstAttribute="top" secondItem="eHv-yQ-pTW" secondAttribute="top" id="Bji-Aw-Ybi"/>
+                        <constraint firstItem="hP6-kP-hlO" firstAttribute="leading" secondItem="eHv-yQ-pTW" secondAttribute="leading" id="JDd-SK-hgh"/>
                         <constraint firstItem="utm-rv-DRj" firstAttribute="leading" secondItem="eHv-yQ-pTW" secondAttribute="leading" id="O3V-Uo-FIQ"/>
-                        <constraint firstAttribute="bottom" secondItem="hP6-kP-hlO" secondAttribute="bottom" id="VgG-h6-kEJ"/>
-                        <constraint firstAttribute="trailing" secondItem="hP6-kP-hlO" secondAttribute="trailing" id="egj-CN-J9z"/>
+                        <constraint firstAttribute="bottom" secondItem="utm-rv-DRj" secondAttribute="bottom" id="QbF-9J-qbv"/>
                         <constraint firstAttribute="trailing" secondItem="utm-rv-DRj" secondAttribute="trailing" id="jfK-Q6-mez"/>
+                        <constraint firstAttribute="trailing" secondItem="hP6-kP-hlO" secondAttribute="trailing" id="t9q-BH-oym"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -52,7 +52,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eHv-yQ-pTW" secondAttribute="trailing" constant="70" id="1Py-YV-YaZ"/>
                 <constraint firstItem="eHv-yQ-pTW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gpB-Bx-Whn"/>
-                <constraint firstItem="eHv-yQ-pTW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-80.75" id="syj-WT-BDO"/>
+                <constraint firstItem="eHv-yQ-pTW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-137.75" id="syj-WT-BDO"/>
             </constraints>
             <point key="canvasLocation" x="139" y="98"/>
         </view>

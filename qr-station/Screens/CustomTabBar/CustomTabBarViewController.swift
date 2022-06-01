@@ -51,7 +51,7 @@ class CustomTabBarViewController: UITabBarController {
          tabBar.isHidden = true
          
          customTabBar.translatesAutoresizingMaskIntoConstraints = false
-         customTabBar.layer.shadowColor = UIColor.black.cgColor
+         customTabBar.layer.shadowColor = UIColor.label.cgColor // does not refresh right away when system changes from dark mode to light mode
          customTabBar.layer.shadowOffset = .zero
          customTabBar.layer.shadowOpacity = 0.4
          customTabBar.layer.shadowRadius = 7
