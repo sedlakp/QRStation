@@ -1,7 +1,6 @@
 // Localizable.strings
-//   qr-station
-// 
-//   Created by Petr Sedlák on 01.06.2022.
+// qr-station
+// Created by Petr Sedlák on 01.06.2022.
 "Tab.Dashboard" = "Dashboard";
 "Tab.List" = "List";
 "Dashboard.Title" = "QR Station";
@@ -35,3 +34,14 @@
 "QRCode.WhereFrom.ImageScan" = "Image scan";
 "List.Unfavorite" = "Unfavorite";
 "Create.Placeholder" = "Type the QR Code content";
+"QRCode.Text" = "Text";
+"QRCode.URL" = "URL";
+"QRCode.Phone" = "Phone";
+"QRCode.Mail" = "Mail";
+"QRCode.Contact" = "Contact";
+"QRCode.Facetime" = "FaceTime";
+"QRCode.WIFI" = "WIFI";
+"QRCode.SMS" = "SMS";
+"QRCode.Place" = "Place";
+"QRCode.Event" = "Event";
+"QRCode.Video" = "Video";

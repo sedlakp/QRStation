@@ -1,7 +1,6 @@
 // Localizable.strings
-//   qr-station
-// 
-//   Created by Petr Sedlák on 01.06.2022.
+// qr-station
+// Created by Petr Sedlák on 01.06.2022.
 "Tab.Dashboard" = "ステーション";
 "Tab.List" = "リスト";
 "Dashboard.Title" = "QRステーション";
@@ -35,3 +34,14 @@
 "QRCode.WhereFrom.ImageScan" = "イメージから";
 "List.Unfavorite" = "お気に入りを消す";
 "Create.Placeholder" = "QRコードの内容";
+"QRCode.Text" = "テキスト";
+"QRCode.URL" = "URL";
+"QRCode.Phone" = "電話";
+"QRCode.Mail" = "メール";
+"QRCode.Contact" = "連絡先";
+"QRCode.Facetime" = "FaceTime";
+"QRCode.WIFI" = "WIFI";
+"QRCode.SMS" = "メッセージ";
+"QRCode.Place" = "場所";
+"QRCode.Event" = "イベント";
+"QRCode.Video" = "動画";

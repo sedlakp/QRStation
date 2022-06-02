@@ -84,17 +84,17 @@ struct QRCode: Equatable, QRProtocol {
         
         var description: String {
             switch self {
-            case .text: return "Text"
-            case .url: return "URL"
-            case .tel: return "Phone"
-            case .mailto: return "Mail"
-            case .mecard, .vcard, .bizcard: return "Contact"
-            case .facetime: return "Facetime"
-            case .wifi: return "WIFI"
-            case .sms: return "SMS"
-            case .map: return "Place"
-            case .vevent: return "Event"
-            case .youtube: return "Video"
+            case .text:                       return "QRCode.Text".localize()
+            case .url:                        return "QRCode.URL".localize()
+            case .tel:                        return "QRCode.Phone".localize()
+            case .mailto:                     return "QRCode.Mail".localize()
+            case .mecard, .vcard, .bizcard:   return "QRCode.Contact".localize()
+            case .facetime:                   return "QRCode.Facetime".localize()
+            case .wifi:                       return "QRCode.WIFI".localize()
+            case .sms:                        return "QRCode.SMS".localize()
+            case .map:                        return "QRCode.Place".localize()
+            case .vevent:                     return "QRCode.Event".localize()
+            case .youtube:                    return "QRCode.Video".localize()
             }
         }
         
