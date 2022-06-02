@@ -51,7 +51,7 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
         qrScanLbl.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
         qrImageScanLbl.text = "Dashboard.Scan.Image".localize()
         qrImageScanLbl.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
-        qrCreateLbl.text = "Dashboard.Scan".localize()
+        qrCreateLbl.text = "Dashboard.Create".localize()
         qrCreateLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         
         scanBkgView.layer.cornerRadius = 12
