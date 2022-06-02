@@ -1,6 +1,17 @@
 # QR Station app
 This app will allow to scan for QR codes and will save them in a list. There will also be a function to create a new QR code and share it. Might also implement points for scanning qr codes  
 
+## Features
+* Scan a QR code to get its data (Scan from a camera or an image)
+* Create a QR code
+* Save scanned or created QR codes
+* Detect QR code content
+* In case of a link, mail, sms, facetime or youtube video there is a button to open the content hidden in the QR code
+* Save or share QR code as an image
+* Favorite/Unfavorite or delete QR codes in the list tab
+* Add a nickname to QR Code
+* Filter QR codes by favorited or by name/text
+
 ## Description
 * UIKit application
 * Instead of storyboards, xib files or SnapKit are used
