@@ -158,7 +158,7 @@ struct QRCode: Equatable, QRProtocol {
         
         var color: UIColor {
             switch self {
-            case .camera: return .systemTeal
+            case .camera: return .systemGray
             case .image: return .systemBrown
             case .created: return .systemPink
             case .unknown: return .systemGray
