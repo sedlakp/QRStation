@@ -10,7 +10,8 @@ This app will allow to scan for QR codes and will save them in a list. There wil
 * Save or share QR code as an image
 * Favorite/Unfavorite or delete QR codes in the list tab
 * Add a nickname to QR Code
-* Filter QR codes by favorited or by name/text
+* Filter QR codes by favorited or by name/text  
+* App has English and 日本語 localization  
 
 ## Description
 * UIKit application
