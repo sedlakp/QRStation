@@ -29,20 +29,13 @@ This app will allow to scan for QR codes and will save them in a list. There wil
 
 ## Screenshots
 
-Main Screen  
-<img src="/screenshots/IMG_6061.png" width="200">
+| Main Screen   | Scanned/created QR code list | Filtered QR code list  |
+| ----------- | ----------- | ----------- |
+| <img src="/screenshots/IMG_6061.png" width="200">  | <img src="/screenshots/IMG_6062.png" width="200"> | <img src="/screenshots/IMG_6064.png" width="200"> |  
 
-Scanned/created QR code list  
-<img src="/screenshots/IMG_6062.png" width="200">
-
-Filtered QR code list  
-<img src="/screenshots/IMG_6064.png" width="200">
-
-QR code scanned  
-<img src="/screenshots/IMG_6063.png" width="200">
-
-QR code detail (after tapping on a table view cell)  
-<img src="/screenshots/IMG_6065.png" width="200">
+| QR code scanned | QR code detail (after tapping on a table view cell)  |
+| ------- | ------ |
+|<img src="/screenshots/IMG_6063.png" width="200"> | <img src="/screenshots/IMG_6065.png" width="200"> |
 
 ## TODO bigger features
 - Templates for special QR actions like mailto: facetime: message, event,... so the user does not need to write the format but only the data (and also add enum to the QR model with this information so for example the QRCell or detail view can show data accordingly)
