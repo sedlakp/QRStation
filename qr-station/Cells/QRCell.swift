@@ -15,6 +15,7 @@ class QRCell: UITableViewCell {
     @IBOutlet weak var whereFromLbl: PaddingLabel!
     @IBOutlet weak var favoriteImg: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var contentLbl: PaddingLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,8 @@ class QRCell: UITableViewCell {
         titleText.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         whereFromLbl.font = UIFont.systemFont(ofSize: 9, weight: .semibold)
         whereFromLbl.textColor = .white
+        contentLbl.font = UIFont.systemFont(ofSize: 9, weight: .semibold)
+        contentLbl.textColor = .white
         qrImage.layer.cornerRadius = 4
         favoriteImg.image = UIImage(systemName: "star.square.fill")
         favoriteImg.tintColor = .systemYellow
@@ -41,6 +44,10 @@ class QRCell: UITableViewCell {
         whereFromLbl.text = qr.whereFrom.detail
         whereFromLbl.layer.masksToBounds = true
         whereFromLbl.layer.cornerRadius = 5
+        contentLbl.backgroundColor = qr.content.color
+        contentLbl.text = qr.content.description
+        contentLbl.layer.masksToBounds = true
+        contentLbl.layer.cornerRadius = 5
         favoriteImg.isHidden = !qr.isFavorite
         nameLbl.text = qr.name
         nameLbl.isHidden = qr.name.isEmpty

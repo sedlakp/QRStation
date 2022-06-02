@@ -21,15 +21,11 @@ protocol QRProtocol {
 
 extension QRProtocol {
     var url: URL? {
-        // TODO: more robust link detection
-        if string.starts(with: "www") {
-            return URL(string: "https://" + string)
-        }
         return URL(string: string)
     }
     
     var content: QRCode.Content {
-        return url?.isValidUrl() ?? false ? .url : .text
+        return decideContent(from: string)
     }
     
     // Create nicer qr code to show
@@ -39,11 +35,11 @@ extension QRProtocol {
         return UIImage(cgImage: cgImage)
     }
     
-    var smallQr: UIImage? {
-        guard let qr = qr else { return nil}
-        let targetSize = CGSize(width: 100, height: 100)
-        return qr.scalePreservingAspectRatio(targetSize: targetSize)
-    }
+//    var smallQr: UIImage? {
+//        guard let qr = qr else { return nil}
+//        let targetSize = CGSize(width: 100, height: 100)
+//        return qr.scalePreservingAspectRatio(targetSize: targetSize)
+//    }
     
     var formattedDate: String {
         let formatter = DateFormatter()
@@ -51,11 +47,101 @@ extension QRProtocol {
         return formatter.string(from: appearedDate)
     }
     
+    private func decideContent(from qrString: String) -> QRCode.Content {
+        // look for specific pattern first
+        for content in QRCode.Content.allCases {
+            guard let pattern = content.patternDistinciton else { continue }
+            if qrString.starts(with: pattern) {
+                return content
+            }
+        }
+        // if no matches in previous loop match one of the basic contents
+        if qrString.isValidUrl() {
+            return .url
+        } else {
+            return .text
+        }
+    }
+    
 }
 
 struct QRCode: Equatable, QRProtocol {
     
-    enum WhereFrom: String{
+    /// URL Schemes and other standardized patterns
+    enum Content: String, CustomStringConvertible, CaseIterable {
+        // basic content
+        case text
+        case url
+        // apple default open url
+        case mailto, tel, facetime, sms
+        // special cases
+        case vcard, mecard, bizcard //Contact info
+        case vevent //calendar event
+        case wifi
+        case youtube
+        case map // google, apple
+        //case social // fb, tw, line
+        
+        var description: String {
+            switch self {
+            case .text: return "Text"
+            case .url: return "URL"
+            case .tel: return "Phone"
+            case .mailto: return "Mail"
+            case .mecard, .vcard, .bizcard: return "Contact"
+            case .facetime: return "Facetime"
+            case .wifi: return "WIFI"
+            case .sms: return "SMS"
+            case .map: return "Place"
+            case .vevent: return "Event"
+            case .youtube: return "Video"
+            }
+        }
+        
+        // return these as predicates, probably the most clear solution
+        // also make a function that will be like, decide qr content
+        var patternDistinciton: String? {
+            switch self {
+            case .text: return nil
+            case .url: return nil
+            case .mailto: return "mailto:"
+            case .facetime: return "facetime:"
+            case .sms: return "sms:"
+            case .tel: return "tel:"
+            case .youtube: return "youtube:"
+            case .wifi: return "WIFI:"
+            case .map: return "geo:"
+            case .vevent: return "BEGIN:VEVENT"
+            case .vcard: return "BEGIN:VCARD"
+            case .bizcard: return "BIZCARD:"
+            case .mecard: return "MECARD:"
+            }
+        }
+        
+        var color: UIColor {
+            return .systemTeal
+        }
+        
+        var icon: UIImage? {
+            switch self {
+            case .text:                     return nil
+            case .url:                      return UIImage(systemName: "safari")
+            case .mailto:                   return UIImage(systemName: "square.and.pencil")
+            case .tel:                      return UIImage(systemName: "phone")
+            case .facetime:                 return UIImage(systemName: "video")
+            case .sms:                      return UIImage(systemName: "message")
+            case .vcard, .mecard, .bizcard: return UIImage(systemName: "person.text.rectangle")
+            case .vevent:                   return UIImage(systemName: "venvelope.open")
+            case .wifi:                     return UIImage(systemName: "wifi")
+            case .youtube:                  return UIImage(systemName: "film")
+            case .map:                      return UIImage(systemName: "map")
+            //case .social:                   return UIImage(systemName: "person")
+            }
+        }
+    }
+    
+    enum WhereFrom: String {
+        
         case camera
         case image
         case created
@@ -78,12 +164,6 @@ struct QRCode: Equatable, QRProtocol {
             case .unknown: return .systemGray
             }
         }
-    }
-    
-    // Enum to know what kind of UI and content should be shown
-    enum Content {
-        case text
-        case url
     }
     
     let string: String

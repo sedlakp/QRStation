@@ -74,7 +74,9 @@ class QRDetailViewController: UIViewController {
         guard let qr = qr else { return }
         qrImageView.image = qr.qr
         textLbl.text = qr.string
-        linkBtn.isHidden = !(qr.url?.isValidUrl() ?? false)
+        linkBtn.setImage(qr.content.icon, for: .normal)
+        // TODO: Handling for non url content
+        linkBtn.isHidden = qr.url == nil ? true : !UIApplication.shared.canOpenURL(qr.url!)
         textFld.text = qr.name
     }
 

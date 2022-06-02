@@ -14,7 +14,7 @@ class RealmService {
     
     static let shared = RealmService()
     
-    let realm: Realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 2))
+    let realm: Realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 4))
     
     init() {
         print(Realm.Configuration.defaultConfiguration.fileURL!) //shows realm file location

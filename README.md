@@ -3,9 +3,10 @@ This app will allow to scan for QR codes and will save them in a list. There wil
 
 ## Description
 * UIKit application
-* Instead of storyboards, xib files are used
+* Instead of storyboards, xib files or SnapKit are used
 * MVVM app architecture 
 * Some [shape.so](https://shape.so/) icons/images are used within the app
+* QR codes are persisted in Realm database
 
 
 ## Resources
