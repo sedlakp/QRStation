@@ -50,7 +50,7 @@ class QRDetailViewController: UIViewController {
         textLbl.backgroundColor = .secondarySystemBackground
         textLbl.layer.masksToBounds = true
         textLbl.layer.cornerRadius = 12
-        textLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        textLbl.font = .appFont.text
         textLbl.numberOfLines = 0
         btnsBkgView.backgroundColor = .secondarySystemBackground
         btnsBkgView.layer.cornerRadius = 12

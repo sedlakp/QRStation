@@ -106,8 +106,8 @@ class SheetViewController: UIViewController {
     private func viewCustomization() {
         view.backgroundColor = .clear
         
-        titleLbl.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
-        descriptionLbl.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        titleLbl.font = .appFont.title
+        descriptionLbl.font = .appFont.text
         descriptionLbl.numberOfLines = 3
         descriptionLbl.textAlignment = .center
         

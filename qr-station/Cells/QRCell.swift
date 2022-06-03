@@ -20,20 +20,20 @@ class QRCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        titleText.numberOfLines = 0
-        dateLbl.font = UIFont.systemFont(ofSize: 9, weight: .semibold)
+        dateLbl.font = UIFont.appFont.tiny
         dateLbl.textColor = .secondaryLabel
+        titleText.numberOfLines = 0
         titleText.textColor = .label
-        titleText.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        whereFromLbl.font = UIFont.systemFont(ofSize: 9, weight: .semibold)
+        titleText.font = .appFont.text
+        whereFromLbl.font = .appFont.tiny
         whereFromLbl.textColor = .white
-        contentLbl.font = UIFont.systemFont(ofSize: 9, weight: .semibold)
+        contentLbl.font = .appFont.tiny
         contentLbl.textColor = .white
         qrImage.layer.cornerRadius = 4
         favoriteImg.image = UIImage(systemName: "star.square.fill")
         favoriteImg.tintColor = .systemYellow
         nameLbl.numberOfLines = 0
-        nameLbl.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        nameLbl.font = .appFont.smallTitle
     }
     
     func setupCell(with qr: QRProtocol) {

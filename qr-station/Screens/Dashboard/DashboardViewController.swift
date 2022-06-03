@@ -46,13 +46,13 @@ class DashboardViewController: UIViewController, HasCustomTabProtocol {
     
     private func setupUI() {
         scanTitleLbl.text = "Dashboard.Scan".localize()
-        scanTitleLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        scanTitleLbl.font = .appFont.smallTitle
         qrScanLbl.text = "Dashboard.Scan.Camera".localize()
-        qrScanLbl.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
+        qrScanLbl.font = .appFont.mini
         qrImageScanLbl.text = "Dashboard.Scan.Image".localize()
-        qrImageScanLbl.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
+        qrImageScanLbl.font = .appFont.mini
         qrCreateLbl.text = "Dashboard.Create".localize()
-        qrCreateLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        qrCreateLbl.font = .appFont.smallTitle
         
         scanBkgView.layer.cornerRadius = 12
         createBkgView.layer.cornerRadius = 12

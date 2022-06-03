@@ -73,7 +73,7 @@ class CustomItemView: UIView {
     
     private func setupProperties() {
       
-        nameLabel.font = .systemFont(ofSize: 11, weight: .semibold)
+        nameLabel.font = .appFont.mini
         nameLabel.text = item.name
         nameLabel.textColor = .white.withAlphaComponent(0.4)
         nameLabel.textAlignment = .center

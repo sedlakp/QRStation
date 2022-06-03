@@ -40,7 +40,7 @@ extension UITextField {
         layer.cornerRadius = 6
         clearButtonMode = .whileEditing
         setPadding(16, nil)
-        font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        font = .appFont.text
         returnKeyType = .done
     }
 

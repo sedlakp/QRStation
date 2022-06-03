@@ -47,7 +47,7 @@ class EmptyStateView: UIView {
         Bundle.main.loadNibNamed("EmptyStateView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
-        textLbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        textLbl.font = .appFont.text
         textLbl.numberOfLines = 0
         layoutIfNeeded()
     }
