@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-yQ-pTW">
-                    <rect key="frame" x="70" y="163" width="274" height="294.5"/>
+                    <rect key="frame" x="70" y="173" width="274" height="294.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP6-kP-hlO">
                             <rect key="frame" x="0.0" y="0.0" width="274" height="20.5"/>
@@ -33,6 +33,7 @@
                             <rect key="frame" x="0.0" y="20.5" width="274" height="274"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="Ydc-4s-Ozd"/>
                                 <constraint firstAttribute="width" secondItem="utm-rv-DRj" secondAttribute="height" multiplier="1:1" id="eeZ-HG-V0l"/>
                             </constraints>
                         </view>
@@ -50,9 +51,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eHv-yQ-pTW" secondAttribute="trailing" constant="70" id="1Py-YV-YaZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eHv-yQ-pTW" secondAttribute="trailing" priority="995" constant="70" id="1Py-YV-YaZ"/>
                 <constraint firstItem="eHv-yQ-pTW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gpB-Bx-Whn"/>
-                <constraint firstItem="eHv-yQ-pTW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-137.75" id="syj-WT-BDO"/>
+                <constraint firstItem="eHv-yQ-pTW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-127.75" id="syj-WT-BDO"/>
             </constraints>
             <point key="canvasLocation" x="139" y="98"/>
         </view>
