@@ -32,7 +32,7 @@ This app will allow to scan for QR codes and will save them in a list. There wil
 
 | Main Screen   | Scanned/created QR code list | Filtered QR code list  |
 | ----------- | ----------- | ----------- |
-| <img src="/screenshots/IMG_6061.png" width="200">  | <img src="/screenshots/IMG_6062.png" width="200"> | <img src="/screenshots/IMG_6064.png" width="200"> |  
+| <img src="/screenshots/IMG_6061.png" width="200">  | <img src="/screenshots/IMG_6078.png" width="200"> | <img src="/screenshots/IMG_6064.png" width="200"> |  
 
 | QR code scanned | QR code detail (after tapping on a table view cell)  |
 | ------- | ------ |
