@@ -12,14 +12,7 @@ class QRDetailViewController: UIViewController {
     
     let vm = QRDetailVM()
     
-    var realm = RealmService.shared
-    
-    var qr: QRProtocol?
-    
     var cancellables: Set<AnyCancellable> = []
-    
-    var onDismiss: (_ hasChange: Bool) -> () = {_ in}
-    var somethingChanged: Bool = false
 
     @IBOutlet weak var textFld: UITextField!
     @IBOutlet weak var qrImageView: UIImageView!
@@ -36,7 +29,7 @@ class QRDetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        onDismiss(somethingChanged)
+        vm.onDismissVC()
     }
     
     override func viewDidLoad() {
@@ -49,9 +42,7 @@ class QRDetailViewController: UIViewController {
         textFld.textPublisher
             .debounce(for: .seconds(0.3), scheduler: RunLoop.main)
             .sink { [weak self] text in
-                guard let qr = self?.qr as? QRCodeRLM else { return }
-                self?.realm.setQRName(for: qr, to: text)
-                self?.somethingChanged = true // on dismiss of this controller table reload will be triggered
+                self?.vm.updateName(with: text)
             }.store(in: &cancellables)
     }
     
@@ -71,7 +62,7 @@ class QRDetailViewController: UIViewController {
     }
     
     func configureWithQR() {
-        guard let qr = qr else { return }
+        guard let qr = vm.qr else { return }
         qrImageView.image = qr.qr
         textLbl.text = qr.string
         linkBtn.setImage(qr.content.icon, for: .normal)
@@ -82,19 +73,16 @@ class QRDetailViewController: UIViewController {
 
     
     @objc private func openUrl() {
-        guard let url = qr?.url else { return }
-        UIApplication.shared.open(url)
+        vm.openQRContent()
     }
     
     @objc private func share() {
-        let items = [qr?.qr]
+        let items = [vm.qr?.qr]
         let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
         present(ac, animated: true)
     }
     
     @objc private func copyString() {
-        let pasteboard = UIPasteboard.general
-        pasteboard.string = qr?.string
-        // TODO: Add some visual response
+        vm.copyToClipboard()
     }
 }

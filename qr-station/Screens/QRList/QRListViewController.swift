@@ -62,6 +62,18 @@ class QRListViewController: UIViewController, HasCustomTabProtocol {
         leftBarButton.tintColor = leftBarButton.tintColor == .systemYellow ? .systemGray : .systemYellow
         vm.justFavoritesActive(leftBarButton.tintColor == .systemYellow)
     }
+    
+    private func openDetail(from indexPath: IndexPath) {
+        let qr = vm.qrCodes[indexPath.row]
+        let vc = QRDetailViewController()
+        vc.vm.qr = qr
+        vc.vm.onDismiss = { [weak tableView] hasChange in
+            if hasChange {
+                tableView?.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+        self.present(vc, animated: true)
+    }
 
 }
 
@@ -69,16 +81,7 @@ class QRListViewController: UIViewController, HasCustomTabProtocol {
 extension QRListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let qr = vm.qrCodes[indexPath.row]
-        let vc = QRDetailViewController()
-        vc.qr = qr
-        vc.onDismiss = { [weak tableView] hasChange in
-            if hasChange {
-                tableView?.reloadRows(at: [indexPath], with: .automatic)
-            }
-        }
-        self.present(vc, animated: true)
-        
+        openDetail(from: indexPath)
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
