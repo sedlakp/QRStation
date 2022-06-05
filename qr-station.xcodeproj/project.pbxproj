@@ -56,6 +56,9 @@
 		BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBABA3FE283E653E0056221D /* CreateQRViewController.swift */; };
 		BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBABA3FF283E653E0056221D /* CreateQRViewController.xib */; };
 		BBBA6CBD2849DE2E00241160 /* UIFontEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA6CBC2849DE2E00241160 /* UIFontEx.swift */; };
+		BBFC947C284CD0BC005DE418 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFC947B284CD0BC005DE418 /* RootViewController.swift */; };
+		BBFC9480284CD177005DE418 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFC947E284CD177005DE418 /* OnboardingPageViewController.swift */; };
+		BBFC9481284CD177005DE418 /* OnboardingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFC947F284CD177005DE418 /* OnboardingPageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +108,9 @@
 		BBABA3FE283E653E0056221D /* CreateQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRViewController.swift; sourceTree = "<group>"; };
 		BBABA3FF283E653E0056221D /* CreateQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateQRViewController.xib; sourceTree = "<group>"; };
 		BBBA6CBC2849DE2E00241160 /* UIFontEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontEx.swift; sourceTree = "<group>"; };
+		BBFC947B284CD0BC005DE418 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		BBFC947E284CD177005DE418 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		BBFC947F284CD177005DE418 /* OnboardingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 				BB2F37002846EF2F009FA328 /* Localizable.strings */,
 				BB0F0FAB283B64C100B3AB12 /* AppDelegate.swift */,
 				BB0F0FAD283B64C100B3AB12 /* SceneDelegate.swift */,
+				BBFC947B284CD0BC005DE418 /* RootViewController.swift */,
 				BB4A6EF2283FCA7F00EB0106 /* RealmService.swift */,
 				BB54E9FE2842215800559FA9 /* Constants.swift */,
 				BB2F36F52845E58F009FA328 /* Models */,
@@ -174,6 +181,7 @@
 		BB0F0FC0283B695B00B3AB12 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BBFC947D284CD125005DE418 /* Onboarding */,
 				BB2F36E22844A8B2009FA328 /* CustomTabBar */,
 				BBABA402283E65470056221D /* CreateQR */,
 				BBABA3FB283E64C40056221D /* Scanner */,
@@ -287,6 +295,15 @@
 			path = CreateQR;
 			sourceTree = "<group>";
 		};
+		BBFC947D284CD125005DE418 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BBFC947E284CD177005DE418 /* OnboardingPageViewController.swift */,
+				BBFC947F284CD177005DE418 /* OnboardingPageViewController.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,6 +387,7 @@
 				BB0F0FCA283B719600B3AB12 /* QRListViewController.xib in Resources */,
 				BB4A6EDD283F900900EB0106 /* ScannerViewController.xib in Resources */,
 				BB2F36DC2842F9E2009FA328 /* Search.json in Resources */,
+				BBFC9481284CD177005DE418 /* OnboardingPageViewController.xib in Resources */,
 				BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */,
 				BB0F0FCE283B71D800B3AB12 /* DashboardViewController.xib in Resources */,
 				BB54EA0528422BB000559FA9 /* EmptyStateView.xib in Resources */,
@@ -397,6 +415,7 @@
 				BB4A6EE9283FBAA600EB0106 /* UITextFieldEx.swift in Sources */,
 				BB0F0FD0283B779D00B3AB12 /* VCExtension.swift in Sources */,
 				BB4A6EF3283FCA7F00EB0106 /* RealmService.swift in Sources */,
+				BBFC9480284CD177005DE418 /* OnboardingPageViewController.swift in Sources */,
 				BB4A6EDC283F900900EB0106 /* ScannerViewController.swift in Sources */,
 				BB0F0FD3283B87C000B3AB12 /* QRCell.swift in Sources */,
 				BB2F36EC2844ACB8009FA328 /* CustomItemView.swift in Sources */,
@@ -405,6 +424,7 @@
 				BB4A6EE4283F982100EB0106 /* QRCode.swift in Sources */,
 				BB2F36E82844A9D7009FA328 /* CustomTabItem.swift in Sources */,
 				BB54E9FF2842215800559FA9 /* Constants.swift in Sources */,
+				BBFC947C284CD0BC005DE418 /* RootViewController.swift in Sources */,
 				BB0F0FD6283B8A2600B3AB12 /* CellEx.swift in Sources */,
 				BB0F0FCD283B71D800B3AB12 /* DashboardViewController.swift in Sources */,
 				BB455BD62840D7FF0043C9AB /* PaddingLabel.swift in Sources */,

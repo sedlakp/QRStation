@@ -10,19 +10,23 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    static weak var shared: SceneDelegate?
 
     var window: UIWindow?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        Self.shared = self
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let first = CustomTabBarViewController()//TabsController(nibName: "TabsController", bundle: nil)
+        //let first = CustomTabBarViewController()//TabsController(nibName: "TabsController", bundle: nil)
         //let nc = UINavigationController(rootViewController: first)
         window.tintColor = forcedTintColor
-        window.rootViewController = first
+        window.rootViewController = RootViewController()//first
         window.makeKeyAndVisible()
         self.window = window
     }
@@ -58,3 +62,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    
+    var rootViewController: RootViewController {
+        return window!.rootViewController as! RootViewController
+    }
+}
