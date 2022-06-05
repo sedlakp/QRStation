@@ -1,6 +1,8 @@
 # QR Station app
 This app will allow to scan for QR codes and will save them in a list. There will also be a function to create a new QR code and share it. Might also implement points for scanning qr codes  
 
+<img src="/screenshots/icon.png" width="100">  
+
 ## Features
 * Scan a QR code to get its data (Scan from a camera or an image)
 * Create a QR code
