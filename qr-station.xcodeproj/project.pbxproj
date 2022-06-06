@@ -59,6 +59,7 @@
 		BBFC947C284CD0BC005DE418 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFC947B284CD0BC005DE418 /* RootViewController.swift */; };
 		BBFC9480284CD177005DE418 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFC947E284CD177005DE418 /* OnboardingPageViewController.swift */; };
 		BBFC9481284CD177005DE418 /* OnboardingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFC947F284CD177005DE418 /* OnboardingPageViewController.xib */; };
+		BBFC9484284DC307005DE418 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFC9482284DC307005DE418 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		BBFC947B284CD0BC005DE418 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		BBFC947E284CD177005DE418 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		BBFC947F284CD177005DE418 /* OnboardingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageViewController.xib; sourceTree = "<group>"; };
+		BBFC9482284DC307005DE418 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 			children = (
 				BBFC947E284CD177005DE418 /* OnboardingPageViewController.swift */,
 				BBFC947F284CD177005DE418 /* OnboardingPageViewController.xib */,
+				BBFC9482284DC307005DE418 /* PageViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				BBFC947C284CD0BC005DE418 /* RootViewController.swift in Sources */,
 				BB0F0FD6283B8A2600B3AB12 /* CellEx.swift in Sources */,
 				BB0F0FCD283B71D800B3AB12 /* DashboardViewController.swift in Sources */,
+				BBFC9484284DC307005DE418 /* PageViewController.swift in Sources */,
 				BB455BD62840D7FF0043C9AB /* PaddingLabel.swift in Sources */,
 				BBABA400283E653E0056221D /* CreateQRViewController.swift in Sources */,
 				BB54EA0128422A7200559FA9 /* TableViewEx.swift in Sources */,

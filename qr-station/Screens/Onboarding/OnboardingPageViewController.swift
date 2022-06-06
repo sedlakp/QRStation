@@ -8,29 +8,62 @@
 import UIKit
 import SnapKit
 
-class OnboardingPageViewController: UIPageViewController {
+class OnboardingPageViewController: UIViewController {
     
-    let btn = UIButton()
+    var onboardingPages: [PageViewController] = {
+        var pages: [PageViewController] = []
+        
+        pages.append(PageViewController(type: .welcome))
+        pages.append(PageViewController(type: .features))
+        pages.append(PageViewController(type: .enjoy))
+        
+        return pages
+    }()
+    
+    var pageViewController: UIPageViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        btn.configuration = .filled()
-        btn.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
         
-        view.addSubview(btn)
+        setupPageController()
+    }
+    
+    private func setupPageController() {
+        pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+        addChild(pageViewController)
+        view.addSubview(pageViewController.view)
         
-        btn.snp.makeConstraints {
-            $0.height.equalTo(40)
-            $0.width.equalTo(100)
-            $0.centerX.centerY.equalTo(view)
+        pageViewController.view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
+        pageViewController.setViewControllers([onboardingPages.first!], direction: .forward, animated: true)
     }
 
+}
 
-    @objc private func btnTapped() {
-        UserDefaults.standard.set(true, forKey: DefaultsKeys.seenOnboarding.rawValue)
-        SceneDelegate.shared?.rootViewController.switchToMainApp()
+
+extension OnboardingPageViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let viewController = viewController as? PageViewController else { return nil}
+        if let index = onboardingPages.firstIndex(of: viewController) {
+            return index > 0 ? onboardingPages[index - 1] : nil
+        }
+        return nil
     }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let viewController = viewController as? PageViewController else { return nil}
+        if let index = onboardingPages.firstIndex(of: viewController) {
+            return index < onboardingPages.count - 1 ? onboardingPages[index + 1] : nil
+        }
+        return nil
+    }
+    
+    
+}
 
+extension OnboardingPageViewController: UIPageViewControllerDelegate {
+    
 }

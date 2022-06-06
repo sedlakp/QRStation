@@ -14,7 +14,7 @@ class RootViewController: UIViewController {
     private var current: UIViewController
     
     init() {
-        if UserDefaults.standard.bool(forKey: DefaultsKeys.seenOnboarding.rawValue) {
+        if false {//UserDefaults.standard.bool(forKey: DefaultsKeys.seenOnboarding.rawValue) {
             self.current = CustomTabBarViewController()
         } else {
             self.current = OnboardingPageViewController()
