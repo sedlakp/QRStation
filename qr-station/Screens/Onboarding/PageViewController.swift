@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 enum PageType {
     case welcome
@@ -46,6 +47,14 @@ enum PageType {
     var hasBtn: Bool {
         return self == .enjoy
     }
+    
+    var animation: String {
+        switch self {
+        case .welcome: return "Editing Shapes"
+        case .features: return "Techno"
+        case .enjoy: return "Location"
+        }
+    }
 }
 
 class PageViewController: UIViewController {
@@ -55,7 +64,8 @@ class PageViewController: UIViewController {
     let stack = UIStackView()
     
     let lbl = UILabel()
-    let lblDetail = UILabel()
+    let animationView = AnimationView()
+    let lblDetail = PaddingLabel()
     let btn = UIButton()
     let spacer = UIView()
     
@@ -72,12 +82,23 @@ class PageViewController: UIViewController {
         super.viewDidLoad()
         setupStack()
         setupTitleLbl()
+        setupAnimationImg()
         setupDetailText()
         stack.addArrangedSubview(spacer)
         if pageType.hasBtn {
             setupBtn()
         }
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        animationView.play()
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        animationView.pause()
+//    }
     
     private func setupStack() {
         view.addSubview(stack)
@@ -86,9 +107,10 @@ class PageViewController: UIViewController {
         stack.axis = .vertical
         
         stack.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            //$0.centerY.equalToSuperview()
             $0.top.equalToSuperview().offset(200)
             $0.left.equalToSuperview().offset(28)
+            $0.right.equalToSuperview().offset(-28)
         }
     }
     
@@ -105,9 +127,25 @@ class PageViewController: UIViewController {
 //        }
     }
     
+    private func setupAnimationImg() {
+        stack.addArrangedSubview(animationView)
+        animationView.snp.makeConstraints {
+            $0.height.width.equalTo(180)
+        }
+        
+        animationView.animation = Animation.named(pageType.animation)
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.backgroundBehavior = .pauseAndRestore
+        animationView.play()
+    }
+    
     private func setupDetailText() {
         stack.addArrangedSubview(lblDetail)
-        lblDetail.textAlignment = .center
+        lblDetail.backgroundColor = .secondarySystemBackground
+        lblDetail.layer.masksToBounds = true
+        lblDetail.layer.cornerRadius = 12
+        lblDetail.textAlignment = pageType == .features ? .left : .center
         lblDetail.font = .appFont.text
         lblDetail.text = pageType.text
         lblDetail.numberOfLines = 0
@@ -118,6 +156,7 @@ class PageViewController: UIViewController {
 
         btn.configuration = .filled()
         btn.setTitle("To the app", for: .normal)
+        btn.titleLabel?.font = .appFont.text
         btn.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
         
         btn.snp.makeConstraints {

@@ -60,6 +60,9 @@
 		BBFC9480284CD177005DE418 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFC947E284CD177005DE418 /* OnboardingPageViewController.swift */; };
 		BBFC9481284CD177005DE418 /* OnboardingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBFC947F284CD177005DE418 /* OnboardingPageViewController.xib */; };
 		BBFC9484284DC307005DE418 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFC9482284DC307005DE418 /* PageViewController.swift */; };
+		BBFC9489284F392E005DE418 /* Editing Shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = BBFC9486284F392E005DE418 /* Editing Shapes.json */; };
+		BBFC948A284F392E005DE418 /* Location.json in Resources */ = {isa = PBXBuildFile; fileRef = BBFC9487284F392E005DE418 /* Location.json */; };
+		BBFC948B284F392E005DE418 /* Techno.json in Resources */ = {isa = PBXBuildFile; fileRef = BBFC9488284F392E005DE418 /* Techno.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +116,9 @@
 		BBFC947E284CD177005DE418 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		BBFC947F284CD177005DE418 /* OnboardingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageViewController.xib; sourceTree = "<group>"; };
 		BBFC9482284DC307005DE418 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		BBFC9486284F392E005DE418 /* Editing Shapes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Editing Shapes.json"; sourceTree = "<group>"; };
+		BBFC9487284F392E005DE418 /* Location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Location.json; sourceTree = "<group>"; };
+		BBFC9488284F392E005DE418 /* Techno.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Techno.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +239,9 @@
 			children = (
 				BB2F36D92842F1B7009FA328 /* Editing.json */,
 				BB2F36DB2842F9E2009FA328 /* Search.json */,
+				BBFC9486284F392E005DE418 /* Editing Shapes.json */,
+				BBFC9487284F392E005DE418 /* Location.json */,
+				BBFC9488284F392E005DE418 /* Techno.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -384,8 +393,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB2F36DA2842F1B7009FA328 /* Editing.json in Resources */,
+				BBFC9489284F392E005DE418 /* Editing Shapes.json in Resources */,
 				BB2F36FE2846EF2F009FA328 /* Localizable.strings in Resources */,
 				BB0F0FD4283B87C000B3AB12 /* QRCell.xib in Resources */,
+				BBFC948B284F392E005DE418 /* Techno.json in Resources */,
 				BB0F0FB8283B64C300B3AB12 /* LaunchScreen.storyboard in Resources */,
 				BB0F0FCA283B719600B3AB12 /* QRListViewController.xib in Resources */,
 				BB4A6EDD283F900900EB0106 /* ScannerViewController.xib in Resources */,
@@ -393,6 +404,7 @@
 				BBFC9481284CD177005DE418 /* OnboardingPageViewController.xib in Resources */,
 				BBABA401283E653E0056221D /* CreateQRViewController.xib in Resources */,
 				BB0F0FCE283B71D800B3AB12 /* DashboardViewController.xib in Resources */,
+				BBFC948A284F392E005DE418 /* Location.json in Resources */,
 				BB54EA0528422BB000559FA9 /* EmptyStateView.xib in Resources */,
 				BB54E9F52841DE8100559FA9 /* QRDetailViewController.xib in Resources */,
 				BB0F0FB5283B64C300B3AB12 /* Assets.xcassets in Resources */,
