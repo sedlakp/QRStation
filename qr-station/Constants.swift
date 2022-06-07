@@ -10,3 +10,9 @@ import UIKit
 
 // The bulletin framework does not set the .tintColor properly in all cases so heres where to change the tint color for entire app
 let forcedTintColor: UIColor = .systemPurple
+
+
+enum DefaultsKeys: String {
+    
+    case seenOnboarding
+}
