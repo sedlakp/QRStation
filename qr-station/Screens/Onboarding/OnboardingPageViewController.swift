@@ -61,6 +61,14 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         return nil
     }
     
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return onboardingPages.count
+    }
+
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+    
     
 }
 

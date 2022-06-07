@@ -20,6 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         Self.shared = self
         
+        UIPageControl.appearance().pageIndicatorTintColor = .label.withAlphaComponent(0.2)
+        UIPageControl.appearance().currentPageIndicatorTintColor = .label
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
