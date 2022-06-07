@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  qr-station
+
+  Created by Petr Sedlák on 07.06.2022.
+  
+*/
+
+"CFBundleDisplayName" = "QR Station";

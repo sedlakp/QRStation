@@ -63,6 +63,7 @@
 		BBFC9489284F392E005DE418 /* Editing Shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = BBFC9486284F392E005DE418 /* Editing Shapes.json */; };
 		BBFC948A284F392E005DE418 /* Location.json in Resources */ = {isa = PBXBuildFile; fileRef = BBFC9487284F392E005DE418 /* Location.json */; };
 		BBFC948B284F392E005DE418 /* Techno.json in Resources */ = {isa = PBXBuildFile; fileRef = BBFC9488284F392E005DE418 /* Techno.json */; };
+		BBFC948E284F4BE9005DE418 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBFC9490284F4BE9005DE418 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,8 @@
 		BBFC9486284F392E005DE418 /* Editing Shapes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Editing Shapes.json"; sourceTree = "<group>"; };
 		BBFC9487284F392E005DE418 /* Location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Location.json; sourceTree = "<group>"; };
 		BBFC9488284F392E005DE418 /* Techno.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Techno.json; sourceTree = "<group>"; };
+		BBFC948F284F4BE9005DE418 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BBFC9491284F4BF2005DE418 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,7 @@
 				BB0F0FB4283B64C300B3AB12 /* Assets.xcassets */,
 				BB0F0FB6283B64C300B3AB12 /* LaunchScreen.storyboard */,
 				BB0F0FB9283B64C300B3AB12 /* Info.plist */,
+				BBFC9490284F4BE9005DE418 /* InfoPlist.strings */,
 			);
 			path = "qr-station";
 			sourceTree = "<group>";
@@ -397,6 +401,7 @@
 				BB2F36FE2846EF2F009FA328 /* Localizable.strings in Resources */,
 				BB0F0FD4283B87C000B3AB12 /* QRCell.xib in Resources */,
 				BBFC948B284F392E005DE418 /* Techno.json in Resources */,
+				BBFC948E284F4BE9005DE418 /* InfoPlist.strings in Resources */,
 				BB0F0FB8283B64C300B3AB12 /* LaunchScreen.storyboard in Resources */,
 				BB0F0FCA283B719600B3AB12 /* QRListViewController.xib in Resources */,
 				BB4A6EDD283F900900EB0106 /* ScannerViewController.xib in Resources */,
@@ -473,6 +478,15 @@
 				BB2F37022846EF4B009FA328 /* ja */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		BBFC9490284F4BE9005DE418 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBFC948F284F4BE9005DE418 /* en */,
+				BBFC9491284F4BF2005DE418 /* ja */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
