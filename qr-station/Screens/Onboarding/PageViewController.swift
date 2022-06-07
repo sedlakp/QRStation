@@ -16,31 +16,20 @@ enum PageType {
     
     var title: String {
         switch self {
-        case .welcome: return "Welcome"
-        case .features: return "Features"
-        case .enjoy: return "Enjoy"
+        case .welcome: return "Onboarding.Welcome.Title".localize()
+        case .features: return "Onboarding.Features.Title".localize()
+        case .enjoy: return "Onboarding.Enjoy.Title".localize()
         }
     }
     
     var text: String {
         switch self {
         case .welcome:
-            return """
-                    Welcome to the QR Station app! With this app, you can scan QR codes from both your camera, or load an image from your photo library.
-                    """
+            return "Onboarding.Welcome.Text".localize()
         case .features:
-            return """
-                    * Scan QR code from camera or photo library
-                    * Create new QR code
-                    * Favorite QR code
-                    * See QR code type
-                    * If possible, open content hidden inside the QR code
-                    * Search for already scanned QR codes
-                    """
+            return "Onboarding.Features.Text".localize()
         case .enjoy:
-          return """
-                Go explore the app by yourself!
-                """
+            return "Onboarding.Enjoy.Text".localize()
         }
     }
     
@@ -155,7 +144,7 @@ class PageViewController: UIViewController {
         view.addSubview(btn)
 
         btn.configuration = .filled()
-        btn.setTitle("To the app", for: .normal)
+        btn.setTitle("Onboarding.ToTheApp".localize(), for: .normal)
         btn.titleLabel?.font = .appFont.text
         btn.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
         

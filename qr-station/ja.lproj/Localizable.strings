@@ -45,3 +45,15 @@
 "QRCode.Place" = "場所";
 "QRCode.Event" = "イベント";
 "QRCode.Video" = "動画";
+"Onboarding.Welcome.Title" = "ようこそ！";
+"Onbarding.Features.Title" = "特徴";
+"Onboarding.Enjoy.Title" = "楽しんで！";
+"Onboarding.ToTheApp" = "アプリの中へ";
+"Onboarding.Welcome.Text" = "QRステーションへようこそ！このアプリでQRコードをカメラまたは写真から読むのができる。";
+"Onboarding.Features.Text" = "* QRコードをカメラまたは写真からスキャンする
+* 新しいQRコードを作る
+* QRコードをお気に入り
+* QRコードのタイプを見る
+* できれば、QRコードの内容を開く
+* スキャンしたQRコードを探す";
+"Onboarding.Enjoy.Text" = "説明はそこまでです！";

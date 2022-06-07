@@ -45,3 +45,15 @@
 "QRCode.Place" = "Place";
 "QRCode.Event" = "Event";
 "QRCode.Video" = "Video";
+"Onboarding.Welcome.Title" = "Welcome";
+"Onbarding.Features.Title" = "Features";
+"Onboarding.Enjoy.Title" = "Enjoy";
+"Onboarding.ToTheApp" = "To the app";
+"Onboarding.Welcome.Text" = "Welcome to the QR Station app! With this app, you can scan QR codes from both your camera, or load an image from your photo library.";
+"Onboarding.Features.Text" = "* Scan QR code from camera or photo library
+* Create new QR code
+* Favorite QR code
+* See QR code type
+* If possible, open content hidden inside the QR code
+* Search for already scanned QR codes";
+"Onboarding.Enjoy.Text" = "Go explore the app by yourself!";

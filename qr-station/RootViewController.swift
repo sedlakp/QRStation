@@ -39,7 +39,7 @@ class RootViewController: UIViewController {
         current.willMove(toParent: nil)
         addChild(new)
        
-       transition(from: current, to: new, duration: 0.9, options: [.transitionCrossDissolve, .curveEaseOut], animations: {
+       transition(from: current, to: new, duration: 0.7, options: [.transitionCrossDissolve, .curveEaseOut], animations: {
        }) { completed in
            self.current.removeFromParent()
            new.didMove(toParent: self)
