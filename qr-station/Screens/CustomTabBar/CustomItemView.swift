@@ -51,8 +51,9 @@ class CustomItemView: UIView {
             $0.center.equalToSuperview()
         }
         
+        iconImageView.contentMode = .scaleAspectFit
         iconImageView.snp.makeConstraints {
-            $0.height.width.equalTo(28)
+            $0.height.width.equalTo(28).priority(.medium)
             $0.top.equalToSuperview()
             $0.bottom.equalTo(nameLabel.snp.top)
             $0.centerX.equalToSuperview()
@@ -60,7 +61,7 @@ class CustomItemView: UIView {
         
         nameLabel.snp.makeConstraints {
             $0.bottom.leading.trailing.equalToSuperview()
-            $0.height.equalTo(16)
+            //$0.height.equalTo(16)
         }
         
         underlineView.snp.makeConstraints {

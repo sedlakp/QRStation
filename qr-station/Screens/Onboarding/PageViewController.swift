@@ -119,7 +119,7 @@ class PageViewController: UIViewController {
     private func setupAnimationImg() {
         stack.addArrangedSubview(animationView)
         animationView.snp.makeConstraints {
-            $0.height.width.equalTo(180)
+            $0.height.equalTo(180)
         }
         
         animationView.animation = Animation.named(pageType.animation)
