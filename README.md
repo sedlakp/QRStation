@@ -41,7 +41,7 @@ This app will allow to scan for QR codes and will save them in a list. There wil
 |<img src="/screenshots/IMG_6063.png" width="200"> | <img src="/screenshots/IMG_6065.png" width="200"> |
 
 ## TODO bigger features
-- Templates for special QR actions like mailto: facetime: message, event,... so the user does not need to write the format but only the data (and also add enum to the QR model with this information so for example the QRCell or detail view can show data accordingly)
-- Template options for design of qr image that can be saved as a photo (right now its just the qr code)
-- Switching of the rootviewcontroller to show animated splashscreen
-- preset or user created tags (school, work, activities, ...) and their filtering in qr code list
+- [ ] Templates for special QR actions like mailto: facetime: message, event,... so the user does not need to write the format but only the data (and also add enum to the QR model with this information so for example the QRCell or detail view can show data accordingly)
+- [ ] Template options for design of qr image that can be saved as a photo (right now its just the qr code)
+- [x] ~~Switching of the rootviewcontroller to show animated splashscreen~~ to show onboarding
+- [ ] preset or user created tags (school, work, activities, ...) and their filtering in qr code list
