@@ -1,5 +1,5 @@
 # QR Station app
-This app will allow to scan for QR codes and will save them in a list.
+App for creating, scanning and saving QR codes.
 
 <img src="/screenshots/icon.png" width="100">  
 
@@ -36,6 +36,6 @@ This app will allow to scan for QR codes and will save them in a list.
 | ----------- | ----------- | ----------- |
 | <img src="/screenshots/IMG_6061.png" width="200">  | <img src="/screenshots/IMG_6078.png" width="200"> | <img src="/screenshots/IMG_6064.png" width="200"> |  
 
-| QR code scanned | QR code detail (after tapping on a table view cell)  |
+| New QR code created | QR code detail (after tapping on a table view cell)  |
 | ------- | ------ |
 |<img src="/screenshots/IMG_6063.png" width="200"> | <img src="/screenshots/IMG_6065.png" width="200"> |
