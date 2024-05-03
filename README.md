@@ -1,5 +1,5 @@
 # QR Station app
-This app will allow to scan for QR codes and will save them in a list. There will also be a function to create a new QR code and share it. Might also implement points for scanning qr codes  
+This app will allow to scan for QR codes and will save them in a list.
 
 <img src="/screenshots/icon.png" width="100">  
 
@@ -39,9 +39,3 @@ This app will allow to scan for QR codes and will save them in a list. There wil
 | QR code scanned | QR code detail (after tapping on a table view cell)  |
 | ------- | ------ |
 |<img src="/screenshots/IMG_6063.png" width="200"> | <img src="/screenshots/IMG_6065.png" width="200"> |
-
-## TODO bigger features
-- [ ] Templates for special QR actions like mailto: facetime: message, event,... so the user does not need to write the format but only the data (and also add enum to the QR model with this information so for example the QRCell or detail view can show data accordingly)
-- [ ] Template options for design of qr image that can be saved as a photo (right now its just the qr code)
-- [x] ~~Switching of the rootviewcontroller to show animated splashscreen~~ to show onboarding
-- [ ] preset or user created tags (school, work, activities, ...) and their filtering in qr code list
